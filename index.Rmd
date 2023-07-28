@@ -53,7 +53,7 @@ All practicals and assignments should be hand in [through this repo](https://git
 ## Column 1
 
 ### Statistical Learning and Visualization
-In eight weeks we will dive into statistical learning and visualization in R. We will focus on supervised learning techniques and data wrangling in the context of data analysis and inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a Q&A meeting (Wednesdays @ 11am - [BBG 106](https://www.uu.nl/en/buys-ballot-building)) wherein you can pose any and all questions that remain unanswered about the course materials, theory, practice and your practical assignments. 
+In eight weeks we will dive into statistical learning and visualization in R. We will focus on supervised learning techniques and data wrangling in the context of data analysis and inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a Q&A meeting (Wednesdays @ 11am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500)) wherein you can pose any and all questions that remain unanswered about the course materials, theory, practice and your practical assignments. 
 
 ### Assignment and Grading
 
@@ -108,8 +108,8 @@ This course provides a broad introduction to supervised learning and visualizati
 Students will learn to adapt these techniques in their way of thinking about analyses problems. We will consider statistical learning techniques in the context of estimation, testing and prediction. Students will learn to adapt these techniques in their way of thinking about statistical inference, which will help students to quantify the uncertainty and measure the accuracy of statistical estimates. Students will develop fundamental `R` programming skills and will gain experience with `tidyverse`, visualize data with `ggplot2` and perform basic data wrangling techniques with `dplyr`. This course makes students better equipped for a further career (e.g. junior researcher or research assistant) or education in research, such as a (research) Master program, or a PhD. 
 
  
-### Assignment
-Students will form groups to choose work on two assigments. Students will need to perform calculations and program code for these assigments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [Course submission GitHub page](https://github.com/gerkovink/INFOMDA1-2022). Each assigment will be graded. 
+### Assignments
+Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [Course submission GitHub page](https://github.com/gerkovink/INFOMDA1-2022). Each assigment will be graded. 
 
 ### Grading
 Students will be evaluated on the following aspects:
