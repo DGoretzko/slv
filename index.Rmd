@@ -20,7 +20,7 @@ This online dashboard covers the course materials for the course [***Supervised 
 ---
 
 Course team: <br>
-- [Gerko Vink](https://www.gerkovink.com) <br>
+- [David Goretzko](https://www.uu.nl/staff/dgoretzko) <br>
 - [Maarten Cruyff](https://www.uu.nl/staff/mcruyff) <br>
 - [Erik-Jan van Kesteren](https://erikjanvankesteren.nl) <br>
 Study load: 7.5 ECTS <br>
@@ -36,15 +36,15 @@ All practicals and assignments should be hand in [through this repo](https://git
 
 | When?  |         | Where?      |
 |--------|---------|-------------|
-| 12-Sep | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 19-Sep | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 26-Sep | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 03-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 10-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 17-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 24-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 31-Okt | 9 am | [BBG 201](https://www.uu.nl/en/buys-ballot-building) |
-| 08-Nov | 5 pm | **Exam** |
+| 11-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 18-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 25-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 02-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 09-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 16-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 23-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 30-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 07-Nov | 5 pm | **Exam** |
 
 ---
 
