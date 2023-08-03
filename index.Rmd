@@ -211,6 +211,10 @@ You can [find this year's assignment 2 here](assignments/assignment_prediction.h
 
 Due date is Nov 13 @ 23.59pm.
 
+### Rubric for Grading
+
+You can [find the rubric that we will use for grading here](assignments/Rubric-for-Assignments.html)
+
 # Week 1
 
 ## Column 1

@@ -34,3 +34,15 @@ You can use data from anywhere. For example, you may use [Google dataset search]
   - one .Rmd (R Markdown) file
   - a compiled .pdf or .html
   - we should be able to compile the .Rmd to the same .pdf or .html. That means no errors!
+
+### Grading
+
+Make sure to check the rubric that we are going to use for grading the assignments.
+
+- The different aspects get the following weights:
+  - Explanation of the data set (15%)
+  - Correctness of code and output (30%)
+  - Interpretation/explanation of approach and results (30%)
+  - Clarity of code and reproducibility (15%)
+  - Layout and overall appearance (10%)
+

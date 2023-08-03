@@ -1,0 +1,52 @@
+---
+title: "Rubric for Assignments"
+mainfont: Arial
+fontsize: 12pt
+urlcolor: blue
+output:
+  html_document:
+    theme: paper
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
++---------------+-------------------+--------------------+---------------------+
+| Criteria      | Poor              | Competent          | Proficient          |
++===============+===================+====================+=====================+
+| Explanation of| Poor description  | Explanation mostly | Explanation entirely|
+| Data (15%)    | of data, Variables| correct, analysis  | correct; variables  |
+|               | not properly      | strategy makes     | properly discussed, |
+|               | explained         | sense given this   | motivation for      |
+|               |                   | explanation        | choosing data set is|
+|               |                   |                    | clear               |
++---------------+-------------------+--------------------+---------------------+
+| Correctness of| Fundamental flaws | R-Code is complete | R-Code is entirely  |
+| Code and      | in code, errors   | and renders mostly | correct, the output |
+| Output (30%)  | when executing it | correct results    | is always correct   |
+|               | OR important parts|                    |                     |
+|               | are missing       |                    |                     |
++---------------+-------------------+--------------------+---------------------+
+| Interpretation| Interpretation    | Interpretation is  | Interpretation goes |
+| of Results and| missing or flawed,| mostly sound and   | beyond describing   |
+| Explanation of| approach is not   | makes sense given  | results, meaningful |
+| Approach (30%)| plausible or does | chosen approach,   | explanations without|
+|               | not match         | only small mistakes| missing important   |
+|               | interpretation    |                    | aspects             |
++---------------+-------------------+--------------------+---------------------+
+| Clarity of    | Inconsistent or   | Clear code with    | Consistent, clear,  |
+| Code (15%)    | incomprehensible  | only negligble     | reproducible code   |
+|               | code OR           | inconsistencies,   | that runs without   |
+|               | not reproducible! | reproducible with  | any adjustments     |
+|               |                   | only minor changes |                     |
++---------------+-------------------+--------------------+---------------------+
+| Layout (10%)  | Unclear layout,   | Layout is mostly   | Layout clean and    |
+|               | missing elements, | clear and concise, | consistent, only    |
+|               | no structure      | no central elements| relevant output, but|
+|               |                   | are missing        | no important        |
+|               |                   |                    | elements missing    |
++---------------+-------------------+--------------------+---------------------+
+

@@ -21,9 +21,7 @@ You can use data from anywhere. For example, you may use [Google dataset search]
 - clean, legible `R` code (preferably following something close to the Google style guide)
 - table(s) with relevant summary statistics
 - descriptive and exploratory plots
-- explain what you did and why (maximum 5 paragraphs total) if applicable, note findings such as missingness, outliers or unlikely values or group differences, etcetera. 
-
-**Other languages: If you are fluent in another programming language, then feel free to use that languages where possible. But, we require you to follow the scope of the course. So do your plots in the grammar of graphics way, make sure that what you do is statistically valid, etc. FWIW: In RStudio you can directly include code chunks into your `.Rmd` file for the following languages: R, Bash, D3, Python, C (Rcpp), SQL and Stan.**
+- explain what you did and why (maximum 5 paragraphs total) if applicable, note findings such as missingness, outliers or unlikely values or group differences, etc. 
 
 ### Format: GitHub submission of an RStudio project folder
 - Should have these components:
@@ -33,4 +31,16 @@ You can use data from anywhere. For example, you may use [Google dataset search]
   - we should be able to compile the .Rmd to the same .pdf or .html. That means no errors!
   - the names of all group members. Student numbers are not needed.  
   
-HINT: If you create an RStudio Project - all files are root dependent on the `.Rproj` file. This avoids file path errors that are local machine dependent. 
+HINT: If you create an RStudio Project - all files are root dependent on the `.Rproj` file. This avoids file path errors that are local machine dependent.
+
+### Grading
+
+Make sure to check the rubric that we are going to use for grading the assignments.
+
+- The different aspects get the following weights:
+  - Explanation of the data set (15%)
+  - Correctness of code and output (30%)
+  - Interpretation/explanation of approach and results (30%)
+  - Clarity of code and reproducibility (15%)
+  - Layout and overall appearance (10%)
+
