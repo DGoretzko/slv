@@ -76,13 +76,13 @@ In order to pass the course, the final grade must be 5.5 or higher, your contrib
 
 | Week # | Focus | Practical | Materials | Prof |
 |--------|---------------------|--------|-----------|------|
-| 1 | Data wrangling with `R` | `tidyverse: filter(), select(), join(), pivot(), dbplyr`, etc. | [R4DS](https://r4ds.had.co.nz) | GV |
-| 2 | The grammar of graphics | `ggplot()`: `geoms`, `aesthetics`, `scales`, `themes` | [R4DS](https://r4ds.had.co.nz) | GV |
-| 3 | Exploratory data analysis | `Histograms`, `density plots`, `boxplots`, etc. | [R4DS](https://r4ds.had.co.nz) [FIMD Ch1](https://stefvanbuuren.name/fimd/ch-introduction.html) | GV | 
+| 1 | Data wrangling with `R` | `tidyverse: filter(), select(), join(), pivot(), dbplyr`, etc. | [R4DS](https://r4ds.had.co.nz) | DG |
+| 2 | The grammar of graphics | `ggplot()`: `geoms`, `aesthetics`, `scales`, `themes` | [R4DS](https://r4ds.had.co.nz) | DG |
+| 3 | Exploratory data analysis | `Histograms`, `density plots`, `boxplots`, etc. | [R4DS](https://r4ds.had.co.nz) [FIMD Ch1](https://stefvanbuuren.name/fimd/ch-introduction.html) | DG | 
 | 4 | Statistical learning: regression | `lm()`, `glm()`, `knn()` | ISLR | MC |
 | 5 | Statistical learning: classification | `glm()`, trees, `lda()` | ISLR | EJvK |
 | 6 | Classification model evaluation | `prop.table()`, `pROC()`, etc. | ISLR | EJvK |
-|	7 | Nonlinear models | `R` formulas advanced | ISLR | MC |
+|	7 | Nonlinear models | `R` formulas advanced: `I()`, splines, e.g., `bs()` | ISLR | MC |
 | 8 | Bagging, boosting, random forest and support vector machines | `randomforest`, `xgboost` | ISLR | MC |
 
 <!-- | 5 | Regression model evaluation | model comparison with cross-validation | ISLR |  -->
@@ -109,7 +109,7 @@ Students will learn to adapt these techniques in their way of thinking about ana
 
  
 ### Assignments
-Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [Course submission GitHub page](https://github.com/gerkovink/INFOMDA1-2022). Each assigment will be graded. 
+Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [Course submission GitHub page](LINK). Each assignment will be graded. 
 
 ### Grading
 Students will be evaluated on the following aspects:
@@ -124,7 +124,7 @@ Students will be evaluated on the following aspects:
 - implement and understand generic data science tools, such as bootstrapping, cross validation, bagging, boosting and error evaluation in `R`
 - interpret and evaluate the results of analyses and explain these techniques in simple terminology to a broad audience
 - understand and explain the basic principles of data visualization and the grammar of graphics.
-- construct appropriate visualizations for each data analysis technique in R
+- construct appropriate visualizations for each data analysis technique in `R`
 
 ### Relation between assessment and objective
 In this course, skills and knowledge are evaluated on these separate occasions:
@@ -141,11 +141,11 @@ After taking this course students can understand innovations in statistical mark
 ### Preparing your machine for the course
 Dear all, 
 
-This semester you will participate in the **Supervised Learning & Visualization** course at Utrecht University. To realize a steeper learning curve, we will use some functionality that is not part of the base installation for `R`. Many of you are already familiar with `R`. The below guide serves as a point of departure for those who are not.  The following steps guide you through installing both `R` as well as some of the necessary packages. 
+This semester you will participate in the **Supervised Learning & Visualization** course at Utrecht University. To realize a steeper learning curve, we will use some functionality that is not part of the base installation for `R`. Many of you are already familiar with `R`. The below guide serves as a point of departure for those who are not. The following steps guide you through installing both `R` as well as some of the necessary packages. 
 
-I look forward to see you all,  
+We look forward to seeing you all,  
 
-*Gerko Vink*
+*David Goretzko*, *Maarten Cruyff*, and *Erik-Jan van Kesteren*
 
 ### **System requirements**
 
@@ -215,7 +215,7 @@ Due date is Nov 13 @ 23.59pm.
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 Please find the [Lecture Slides here](lectures/L1/Lecture-1.html)
 
 ### Practical
@@ -227,9 +227,9 @@ This week's practical is on data wrangling. The answers are also given to you. U
 - [students.xlsx](practicals/01_Data_Wrangling/data/students.xlsx)
 - [SLV_practical1 - or create your own project](practicals/01_Data_Wrangling/SLV_practical1.zip)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
-If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
+If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from a course of our colleague. There you can find video walkthroughs that detail the process. 
 
 ### A must watch
 The below 4-part series by Garrett Grolemund on `dplyr` and the `tidyverse` is very informative:
@@ -262,7 +262,7 @@ The following links may be useful
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 This week's slides:
 
 - [Lecture Slides](lectures/L2/Lecture_2_WS.html)
@@ -274,7 +274,7 @@ This week's practical is on data visualization. Code solutions are also given to
 - [Practical 2: Data visualization with code solutions](practicals/02_Data_Visualization/02_Data_Visualisation_answers.html)
 - [SLV_practical2 - or create your own project](practicals/02_Data_Visualization/SLV_practical2.zip)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 ### Must watch
 The following lecture by [Dewey Dunnington](https://fishandwhistle.net) is quite informative. Also for those that already (think they) know the `ggplot2` package. 
@@ -302,7 +302,7 @@ The following links may be useful
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 This week's slides:
 
 - [Lecture Slides part 1](lectures/L3/week-2.pdf)
@@ -310,8 +310,6 @@ This week's slides:
 - [The titanic set from part 2](lectures/L3/titanic.csv). I don't remember where I got it from, originally. There is also a copy of the `titanic` data in `R`, but I found this data set and its labeling to be more informative.
 
 ### Q&A
-During the Q&A session on Wednesday, we will devote some time to missing data analysis
-
 If you'd like to get rid of the `DS_Store` files that Mac systems generate, then run the following in the terminal:
 ```{r eval = FALSE, echo = TRUE}
 cd "PATH TO YOUR GIT REPO"
@@ -326,7 +324,7 @@ This week's practical is on exploratory data analysis. Code solutions are also g
 - [Practical 3: EDA](practicals/03_Exploratory/03_Exploratory.html)
 - [Practical 3: EDA with code solutions](practicals/03_Exploratory/03_Exploratory_Answers.html)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 ## Column 2
 
@@ -356,7 +354,7 @@ The following lecture by [Edward Tufte](https://www.edwardtufte.com/tufte/) is q
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 This week's slides:
 
 - [Lecture 4](lectures/L4/week-4.pdf)
@@ -368,7 +366,7 @@ This week's practical is on regression. Code solutions are also given to you. Us
 - [Practical 4: Regression](practicals/04_Regression/04_Regression.html)
 - [Practical 4: Regression with code solutions](practicals/04_Regression/04_Regression_answers.html)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 ## Column 2
 
@@ -379,39 +377,11 @@ Study the following materials
 -[ISLR V2 Chapter 1, 2 and 3](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
 
-<!-- # Week 5 -->
-
-<!-- ## Column 1 -->
-
-<!-- ### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building)) -->
-<!-- This week's slides: -->
-
-<!-- - [Lecture 5](lectures/L5/week-5.pdf) -->
-
-
-<!-- ### Practical -->
-<!-- This week's practical is on regression. Code solutions are also given to you. Use these answers to help yourself when you're stuck.  -->
-
-<!-- - [Practical 5: Model comparison](practicals/05_Regression_Evaluation/05_Regression_Evaluation.html) -->
-<!-- - [Practical 5: Model comparison with code solutions](practicals/05_Regression_Evaluation/05_Regression_Evaluation_answers.html) -->
-<!-- - [generate_formulas.R](practicals/05_Regression_Evaluation/generate_formulas.R) -->
-
-<!-- Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues) -->
-
-<!-- ## Column 2 -->
-
-<!-- ### Required reading -->
-
-<!-- Study the following materials -->
-
-<!-- -[ISLR V2 Chapter 5 and 6.1 and 6.2](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf) -->
-
-
 # Week 5
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 This week's slides:
 
 - [Lecture 5](lectures/L6/week-6.pdf)
@@ -424,7 +394,7 @@ This week's practical is on classification. Code solutions are also given to you
 - [Practical 5: Classification answers](practicals/06_classification/06_classification_answers.html)
 - [data](practicals/06_classification/data.zip)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 **NOT HAND IN, BUT STILL USEFUL**: I also give you the following practical from last year. Please view and study the practical up to and including Exercise 10. No need to hand anything in. All the regularization (`glmnet`) exercises 11-19 are not relevant for this course, but you may of course use the methods in your Assignment 2 if you wish. Let me know if you have any questions. 
 
@@ -444,7 +414,7 @@ Study the following materials
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 This week's slides:
 
 - [Lecture 6](lectures/L7/week-7.pdf)
@@ -457,7 +427,7 @@ This week's practical is on classification. Code solutions are also given to you
 - [Practical 6: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html)
 - [data](practicals/07_classification_evaluation/data.zip)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 ## Column 2
 
@@ -473,7 +443,7 @@ Study the following materials
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 
 This week's slides:
 
@@ -486,7 +456,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 - [Practical 7: Nonlinear regression](practicals/08_nonlinear_regression/08_nonlinear_regression.html)
 - [Practical 7: Nonlinear regression answers](practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 ## Column 2
 
@@ -501,7 +471,7 @@ Study the following materials
 
 ## Column 1
 
-### Lecture (Monday 9am - [BBG 201](https://www.uu.nl/en/buys-ballot-building))
+### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 
 This week's slides:
 
@@ -515,7 +485,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 - [Practical 8: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
 - [Data](practicals/09_ensemble/data.zip)
 
-Hand in by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2022). Ask questions through [GitHub issues here](https://github.com/gerkovink/INFOMDA1-2022/issues)
+Hand in by PR from your fork [here](LINK).
 
 ## Column 2
 
