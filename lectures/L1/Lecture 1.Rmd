@@ -1,6 +1,6 @@
 ---
 title: "Introduction, Basics and Data Wrangling"
-author: "Gerko Vink"
+author: "Gerko Vink & David Goretzko"
 date: "Supervised Learning and Visualization"
 output: 
   ioslides_presentation:
@@ -139,17 +139,17 @@ $(document).ready(function() {
 6. Data Wrangling
 7. Wrap-up
 
-## Disclaimer
-I owe a debt of gratitude to many people as the thoughts and teachings in my slides are the process of years-long development cycles and discussions with my team, friends, colleagues and peers. When someone has contributed to the content of the slides, I have credited their authorship. 
+<!-- ## Disclaimer -->
+<!-- I owe a debt of gratitude to many people as the thoughts and teachings in my slides are the process of years-long development cycles and discussions with my team, friends, colleagues and peers. When someone has contributed to the content of the slides, I have credited their authorship.  -->
 
-When external figures and other sources are shown: 
+<!-- When external figures and other sources are shown:  -->
 
-1) the references are included when the origin is known, or 
-2) the objects are directly linked from within the public domain and the source can be obtained by right-clicking the objects. 
+<!-- 1) the references are included when the origin is known, or  -->
+<!-- 2) the objects are directly linked from within the public domain and the source can be obtained by right-clicking the objects.  -->
 
-Opinions are my own. 
+<!-- Opinions are my own.  -->
 
-I am a statistician
+<!-- I am a statistician -->
 
 ## Procedural stuff
 - If there is anything important - contact me!
@@ -157,35 +157,30 @@ I am a statistician
 
   - If you are ill, ask your classmates to cover for you.
   
-- If you feel that you are stuck, and the wait for the Q&A session is too long: [open a GitHub issue here](https://github.com/gerkovink/INFOMDA1-2022/issues/). 
-
+- If you feel that you are stuck, ask your classmates, ask me, ask the other lecturers. Ask a lot! Ask questions during/after the lectures and in the Q&A sessions.
   - You are most likely not the only one with that question. You are simply the bravest or the first. 
   - **Do not contact us via private chat or e-mail for content-related questions**.
-  - use a [`reprex`](https://reprex.tidyverse.org) to detail your issue, when code is involved. 
 - If you expect that you are going to miss some part(s) of the course, please notify me via a private MS-Teams message or e-mail.
 
 ## Course pages
 You can find all materials at the following location:
 
-<center>[https://www.gerkovink.com/slv/](https://www.gerkovink.com/slv/)</center>
+<center>[https://dgoretzko.github.io/slv/](https://dgoretzko.github.io/slv/)</center>
 <br>
 
 All course materials should be submitted through a pull-request from your Fork of
 
-<center>[https://github.com/gerkovink/INFOMDA1-2022](https://github.com/gerkovink/INFOMDA1-2022)</center>
+<center>[LINK](LINK)</center>
 <br>
 
 The structure of your submissions should follow the corresponding repo's README. To make it simple, I have added an example for the first practical. 
-If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from one of my other courses. There you can find video walkthroughs that detail the process. 
+If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from another course. There you can find video walkthroughs that detail the process. 
 
 # Course overview
 
 ## Team
 
-<center> ![Gerko, Maarten and Erik-Jan](img/team.png) 
-<br>
-
-[Gerko Vink](https://www.gerkovink.com), [Maarten Cruyff](https://www.uu.nl/staff/mcruyff) and [Erik-Jan van Kesteren](https://erikjanvankesteren.nl) </center>
+[David Goretzko](https://www.uu.nl/staff/dgoretzko), [Maarten Cruyff](https://www.uu.nl/staff/mcruyff) and [Erik-Jan van Kesteren](https://erikjanvankesteren.nl) </center>
 
 <br>
 <br>
@@ -196,9 +191,9 @@ All three have a PhD in statistics and a ton of experience in development, data 
 
 | Week # | Focus | Teacher | Materials | 
 |--------|---------------------|--------|-----------|
-| 1 | Data wrangling with `R` | GV | [R4DS](https://r4ds.had.co.nz) [ISLR](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)| 
-| 2 | The grammar of graphics | GV | [R4DS](https://r4ds.had.co.nz) | 
-| 3 | Exploratory data analysis | GV | [R4DS](https://r4ds.had.co.nz) [FIMD](https://stefvanbuuren.name/fimd/ch-introduction.html) | 
+| 1 | Data wrangling with `R` | DG | [R4DS](https://r4ds.had.co.nz) [ISLR](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)| 
+| 2 | The grammar of graphics | DG | [R4DS](https://r4ds.had.co.nz) | 
+| 3 | Exploratory data analysis | DG | [R4DS](https://r4ds.had.co.nz) [FIMD](https://stefvanbuuren.name/fimd/ch-introduction.html) | 
 | 4 | Statistical learning: regression | MC | ISLR, TBD |
 | 5 | Statistical learning: classification | EJvK | ISLR, TBD |
 | 6 | Classification model evaluation | EJvK | ISLR, TBD |
@@ -209,10 +204,10 @@ All three have a PhD in statistics and a ton of experience in development, data 
 
 Each weak we have the following:
 
-  - 1 Lecture on Monday @ 9am in [BBG 201](https://www.uu.nl/en/buys-ballot-building)
+  - 1 Lecture on Monday @ 9am in [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500)
   - 1 Practical (not graded). Must be submitted to pass. Hand in the practical before the next lecture
-  - 1 combined workgroup and Q&A session in [BBG 106](https://www.uu.nl/en/buys-ballot-building)
-  - Course materials to study. See the corresponding week on [the course page](https://www.gerkovink.com/slv/).
+  - 1 combined workgroup and Q&A session in [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500)
+  - Course materials to study. See the corresponding week on [the course page](https://dgoretzko.github.io/slv/).
 
 Twice we have:
 
@@ -228,7 +223,7 @@ Once we have:
 
 ## Groups 
 
-We will make groups on Wednesday Sept 14!
+We will make groups on Wednesday Sept 13!
 
 # Introduction to SLV
 
@@ -380,7 +375,7 @@ The uncertainty measures about our estimates can be used to create intervals
 <div style="float: right; width: 30%;">
 Confidence intervals can be hugely informative!
 
-If we sample 100 samples from a population, then a *95% CI* will cover the population value at least 95 out of 100 times. 
+If we sample 100 samples from a population, then a *95% CI* will cover the population value on average 95 out of 100 times. 
 
 - If the coverage <95: bad estimation process with risk of errors and invalid inference
 - If the coverage >95: inefficient estimation process, but correct conclusions and valid inference. Lower statistical power. 
@@ -434,8 +429,6 @@ We now have a new problem:
 - we do not have the whole truth; but merely a sample of the truth
 - we do not even have the whole sample, but merely a sample of the sample of the truth. 
 
-Q4. What would be a simple solution to allowing for valid inferences on the incomplete sample? <br>
-Q5. Would that solution work in practice?
 </div>
 
 <div style="clear: both;"></div>
@@ -451,8 +444,6 @@ We now have a new problem:
 - we do not have the whole truth; but merely a sample of the truth
 - we do not even have the whole sample, but merely a sample of the sample of the truth. 
 
-Q4. What would be a simple solution to allowing for valid inferences on the incomplete sample? <br>
-Q5. Would that solution work in practice?
 </div>
 
 <div style="clear: both;"></div>
@@ -490,68 +481,68 @@ For example:
 1. Predict a future response, but we only have the past
 2. Analyzing incomplete data without a reference about the truth
 3. Estimate the effect between two things that can never occur together
-4. Mixing bonafide observations with bonafide non-observations
+4. Observe rather selective instances from the population
 
-# What to do with uncertainty without a truth?
+<!-- # What to do with uncertainty without a truth? -->
 
-## Scenario 
-Let's assume that we have an incomplete data set and that we can impute (fill in) the incomplete values under multiple models
+<!-- ## Scenario  -->
+<!-- Let's assume that we have an incomplete data set and that we can impute (fill in) the incomplete values under multiple models -->
 
-**Challenge**<br>
-Imputing this data set under one model may yield different results than imputing this data set under another model. 
+<!-- **Challenge**<br> -->
+<!-- Imputing this data set under one model may yield different results than imputing this data set under another model.  -->
 
-**Problem**<br>
-We have no idea about validity of either model's results: we would need either the true observed values or the estimand before we can judge the performance and validity of the imputation model.
+<!-- **Problem**<br> -->
+<!-- We have no idea about validity of either model's results: we would need either the true observed values or the estimand before we can judge the performance and validity of the imputation model. -->
 
-<div class="notepaper">
-  <figure class="quote">
-    <blockquote class="curly-quotes" cite="https://www.youtube.com/watch?v=qYLrc9hy0t0">
-    <font color="black">
-    We do have a constant in our problem, though: **the observed values**
-    </font>
-    </blockquote>
-  </figure>
-</div>
+<!-- <div class="notepaper"> -->
+<!--   <figure class="quote"> -->
+<!--     <blockquote class="curly-quotes" cite="https://www.youtube.com/watch?v=qYLrc9hy0t0"> -->
+<!--     <font color="black"> -->
+<!--     We do have a constant in our problem, though: **the observed values** -->
+<!--     </font> -->
+<!--     </blockquote> -->
+<!--   </figure> -->
+<!-- </div> -->
 
-## Solution
+<!-- ## Solution -->
 
-<div style="float: left; width: 50%;">
-![](img/13. PPC_linear.png){width=80%}
-</div>
+<!-- <div style="float: left; width: 50%;"> -->
+<!-- ![](img/13. PPC_linear.png){width=80%} -->
+<!-- </div> -->
 
-<div style="float: right; width: 50%;">
-We can *overimpute* the observed values and evaluate how well the models fit on the observed values. 
+<!-- <div style="float: right; width: 50%;"> -->
+<!-- We can *overimpute* the observed values and evaluate how well the models fit on the observed values.  -->
 
-The assumption would then be that any good imputation model would properly cover the observed data (i.e. would fit to the observed data). 
+<!-- The assumption would then be that any good imputation model would properly cover the observed data (i.e. would fit to the observed data).  -->
 
-- If we overimpute the observations multiple times we can calculate bias, intervals and coverage. 
-- The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model. 
+<!-- - If we overimpute the observations multiple times we can calculate bias, intervals and coverage.  -->
+<!-- - The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model.  -->
 
-The model to the left clearly does not fit well to the observations.
-</div>
+<!-- The model to the left clearly does not fit well to the observations. -->
+<!-- </div> -->
 
-<div style="clear: both;"></div>
+<!-- <div style="clear: both;"></div> -->
 
-## Solution
+<!-- ## Solution -->
 
-<div style="float: left; width: 50%;">
-![](img/12. PPC_quadratic.png){width=80%}
-</div>
+<!-- <div style="float: left; width: 50%;"> -->
+<!-- ![](img/12. PPC_quadratic.png){width=80%} -->
+<!-- </div> -->
 
-<div style="float: right; width: 50%;">
-We can *overimpute* the observed values and evaluate how well the models fit on the observed values. 
+<!-- <div style="float: right; width: 50%;"> -->
+<!-- We can *overimpute* the observed values and evaluate how well the models fit on the observed values.  -->
 
-The assumption would then be that any good imputation model would properly cover the observed data (i.e. would fit to the observed data). 
+<!-- The assumption would then be that any good imputation model would properly cover the observed data (i.e. would fit to the observed data).  -->
 
-- If we overimpute the observations multiple times we can calculate bias, intervals and coverage. 
-- The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model. 
+<!-- - If we overimpute the observations multiple times we can calculate bias, intervals and coverage.  -->
+<!-- - The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model.  -->
 
-The model to the left fits quite well to the observations.
+<!-- The model to the left fits quite well to the observations. -->
 
-<br> Q6. Can we infer truth?
-</div>
+<!-- <br> Q6. Can we infer truth? -->
+<!-- </div> -->
 
-<div style="clear: both;"></div>
+<!-- <div style="clear: both;"></div> -->
 
 # Bringing it in perspective
 
@@ -585,12 +576,12 @@ The model to the left fits quite well to the observations.
 - **Confirmatory**: <br> Testing hypotheses
 
 ## Some examples
-|  | Exploratory                | Confirmatory      |
-|--------------|----------------------------|-------------------|
-| Description  | EDA; unsupervised learning | One-sample t-test |
-| Prediction   | Supervised learning        | Macro-economics   |
-| Explanation  | Visual mining       | Causal inference  |
-| Prescription | Personalised medicine      | A/B testing       |
+|              | Exploratory                | Confirmatory         |
+|--------------|----------------------------|----------------------|
+| Description  | EDA; unsupervised learning | Correlation analysis |
+| Prediction   | Supervised learning        | Theoretical modeling |
+| Explanation  | Visual mining              | Causal inference     |
+| Prescription | Personalised medicine      | A/B testing          |
 
 ## In this course
 - **Exploratory Data Analysis**: <br> 
@@ -600,8 +591,8 @@ Examples: boxplot, five-number summary, histograms, missing data plots, ...
 
 - **Supervised learning**: <br>
 Regression: predict continuous labels from other values.<br>
-Examples: linear regression, support vector machines, regression trees, ... Classification: predict discrete labels from other values. <br>
-Examples: logistic regression, discriminant analysis, classification trees, ...
+Examples: linear regression, generalized additive model, regression trees,...<br> Classification: predict discrete labels from other values. <br>
+Examples: logistic regression, support vector machines, classification trees, ...
 
 <center>
 ![](img/classification-regression.png){width=50%} <br>
@@ -632,7 +623,7 @@ How do you think that `data analysis` relates to:
 People from different fields (such as statistics, computer science, information science, industry) have different goals and different standard approaches.
 
 - We often use the same techniques.
-- We just use different terms to highligh different aspects of so-called `data analysis`. 
+- We just use different terms to highlight different aspects of so-called `data analysis`. 
 - All the terms on the previous slides are not exact synonyms. 
 - But according to most people they carry the same analytic intentions. 
 
@@ -698,48 +689,48 @@ where $P$ is the percentage of ILI physician visit and $Q$ is the ILI-related qu
 </center>
 [Eder, Maciej & Rybicki, Jan & Kestemont, Mike. (2016). Stylometry with R: A Package for Computational Text Analysis. The R Journal. 8. 107-121. 10.32614/RJ-2016-007. ](https://svn.r-project.org/Rjournal/html/archive/2016-1/eder-rybicki-kestemont.pdf)
 
-## The tree of life
-<div class="columns-2">
-  ![](img/ToL.webp){width=95%}
-  
-  [Hug, L., Baker, B., Anantharaman, K. et al. A new view of the tree of life. Nat Microbiol 1, 16048 (2016)](https://www.nature.com/articles/nmicrobiol201648)
+<!-- ## The tree of life -->
+<!-- <div class="columns-2"> -->
+<!--   ![](img/ToL.webp){width=95%} -->
 
-</div>
+<!--   [Hug, L., Baker, B., Anantharaman, K. et al. A new view of the tree of life. Nat Microbiol 1, 16048 (2016)](https://www.nature.com/articles/nmicrobiol201648) -->
 
-## The tree of life
-<center>
-![](img/ToL2.png){width=97%} <br>
-</center>
-[Image source](https://flowingdata.com/2018/10/25/tree-of-life/)
+<!-- </div> -->
 
-## Exercise
-<center>
-<div class="columns-2">
-  Challenger disaster<br>
-  How wages differ<br>
-  Jon Snow and Cholera<br>
-  Election prediction<br><br>
-  
-  Flu trends<br>
-  Brontë or Austen <br>
-  Elevation, climate and forest <br>
-  The tree of life <br>
-</div>
-</center>
-<br>
+<!-- ## The tree of life -->
+<!-- <center> -->
+<!-- ![](img/ToL2.png){width=97%} <br> -->
+<!-- </center> -->
+<!-- [Image source](https://flowingdata.com/2018/10/25/tree-of-life/) -->
 
-**Where would you place each example in the table?**
+<!-- ## Exercise -->
+<!-- <center> -->
+<!-- <div class="columns-2"> -->
+<!--   Challenger disaster<br> -->
+<!--   How wages differ<br> -->
+<!--   Jon Snow and Cholera<br> -->
+<!--   Election prediction<br><br> -->
 
-- Does each example fit in just one cell of the table?
-- For each of these analyses, we can ask some common questions, such as:
-  - “How well does the model fit the data?”
-  - “How well does the model do on new, unseen, data?” 
-  - ...
-<br>
+<!--   Flu trends<br> -->
+<!--   Brontë or Austen <br> -->
+<!--   Elevation, climate and forest <br> -->
+<!--   The tree of life <br> -->
+<!-- </div> -->
+<!-- </center> -->
+<!-- <br> -->
 
-**Can we think of other common questions?**
+<!-- **Where would you place each example in the table?** -->
 
-**Can we think of an example of a case where the model did not do well?**
+<!-- - Does each example fit in just one cell of the table? -->
+<!-- - For each of these analyses, we can ask some common questions, such as: -->
+<!--   - “How well does the model fit the data?” -->
+<!--   - “How well does the model do on new, unseen, data?”  -->
+<!--   - ... -->
+<!-- <br> -->
+
+<!-- **Can we think of other common questions?** -->
+
+<!-- **Can we think of an example of a case where the model did not do well?** -->
 
 ## Nothing happened, so we ignored it
 <div style="float: left; width: 50%;">
@@ -774,19 +765,13 @@ Such unavailable information can mislead people. The notion that we could potent
 
 - When thinking about important topics, such as whether to stay in school, it helps to know that more highly educated people tend to earn more, but also that there is no difference for top earners.
 
-- Before John Snow, people thought “miasma” caused cholera and they fought it by airing out the house. It was not clear whether this helped or not, but people thought it must because “miasma” theory said so
+- Before John Snow, people thought “miasma” (some form of bad air) caused cholera and they fought it by airing out the house. It was not clear whether this helped or not, but people thought it must because “miasma” theory said so
 
 - Election polls vary randomly from day to day. Before aggregating services like `Peilingwijzer`, newspapers would make huge news items based on noise from opinion polls.
 
-- If we know flu is coming two weeks earlier than usual, that’s just enough time to buy shots for very weak people.
+- If we know flu is coming two weeks earlier than usual, that’s just enough time to buy shots for very weak people (but be aware: **Changing data conditions**).
 
 - If we know how ecosystems are affected by temperature change, we know how our forests will change in the coming 50-100 years due to climate change.
-
-## Why analysis and visualization?
-
-- Scholars fight over who wrote various songs (Wilhelmus), treatises (Caesar), plays (Shakespeare), etc., with shifting arguments. By counting words, we can sometimes identify the most likely author of a text, and we can explain exactly why we think that is the correct answer.
-
-- Biologists have been constructing the tree of life based on appearance of the animal/plant. But sometimes the outward appearance corresponds by chance. DNA is a more precise method, because there is more of it, and because it is more directly linked to evolution than appearance. But there is so much of it that we need automated methods of reconstructing the tree.
 
 ## There is a need
 
@@ -819,9 +804,9 @@ Data wrangling is the process of transforming and mapping data from one "raw" da
 [Source: R4DS](https://r4ds.had.co.nz/wrangle-intro.html)
 
 ## Core ideas
-- **Discovering**: The first step of data wrangling is to gain a better understanding of the data: different data is worked and organized in different ways.
-- **Structuring**:The next step is to organize the data. Raw data is typically unorganized and much of it may not be useful for the end product. This step is important for easier computation and analysis in the later steps.
-- **Cleaning**: There are many different forms of cleaning data, for example one form of cleaning data is catching dates formatted in a different way and another form is removing outliers that will skew results and also formatting null values. This step is important in assuring the overall quality of the data.
+- **Discovering**: The first step of data wrangling is to gain a better understanding of the data: different data are worked and organized in different ways.
+- **Structuring**:The next step is to organize the data. Raw data are typically unorganized and much of it may not be useful for the end product. This step is important for easier computation and analysis in the later steps.
+- **Cleaning**: There are many different forms of cleaning data, for example one form of cleaning data is catching dates formatted in a different way and another form is removing outliers that will skew results or formatting null values. This step is important in assuring the overall quality of the data.
 - **Enriching**: At this step determine whether or not additional data would benefit the data set that could be easily added.
 - **Validating**: This step is similar to structuring and cleaning. Use repetitive sequences of validation rules to assure data consistency as well as quality and security. An example of a validation rule is confirming the accuracy of fields via cross checking data.
 - **Publishing**: Prepare the data set for use downstream, which could include use for users or software. Be sure to document any steps and logic during wrangling.
