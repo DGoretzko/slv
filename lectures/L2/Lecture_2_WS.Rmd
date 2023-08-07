@@ -1,6 +1,6 @@
 ---
 title: 'Towards visualizing data'
-author: "Gerko Vink & Erik-Jan van Kesteren"
+author: "Gerko Vink, David Goretzko & Erik-Jan van Kesteren"
 date: "Statistical Programming in R"
 output:
   ioslides_presentation:
@@ -14,7 +14,7 @@ output:
 
 - Data manipulation
 
-- Basic analysis (correlation & t-test)
+- Basic analyses ([linear regression], correlation & t-test)
 
 - Pipes
 
@@ -46,7 +46,7 @@ head(cats)
 str(cats)
 ```
 
-## How to get only Female cats?
+## How to select only Female cats?
 
 ```{r}
 fem.cats <- cats[cats$Sex == "F", ]
@@ -54,14 +54,14 @@ dim(fem.cats)
 head(fem.cats)
 ```
 
-## How to get only *heavy* cats?
+## How to select only *heavy* cats?
 ```{r}
 heavy.cats <- cats[cats$Bwt > 3, ]
 dim(heavy.cats)
 head(heavy.cats)
 ```
 
-## How to get only *heavy* cats?
+## How to select only *heavy* cats?
 ```{r}
 heavy.cats <- subset(cats, Bwt > 3)
 dim(heavy.cats)
@@ -120,7 +120,7 @@ cats.2 <- arrange(cats, desc(Hwt), Bwt)
 head(cats.2, n = 10)
 ```
 
-# Basic analysis
+# Basic analyses
 ## Correlation
 
 ```{r}
@@ -167,7 +167,7 @@ It effectively replaces `head(read_sav("boys.sav"))`.
 
 
 ## Why are pipes useful?
-Let's assume that we want to load data, change a variable, filter cases and select columns. Without a pipe, this would look like
+Let's assume that we want to load data, change a variable, filter cases and select columns. Without a pipe, this could look like
 ```{r}
 boys  <- read_sav("boys.sav")
 boys2 <- transform(boys, hgt = hgt / 100)
@@ -303,12 +303,6 @@ cats.test
 boys %<>% 
   arrange(desc(bmi)) 
 head(boys)
-```
-
-## Beware
-```{r}
-boys %$%
-  lm(bmi ~ .*., data = .)
 ```
 
 
@@ -620,6 +614,56 @@ boys %>%
   theme_minimal()
 ```
 
+## Changing the Style: Themes
+
+- Themes determine the overall appearance of your plot
+- standard themes: e.g., `theme_minimal()`, `theme_classic()`, `theme_bw()`, ...
+- extra libraries with additional themes: e.g., `ggthemes`
+- customize own theme using options of `theme()`
+
+## Changing the Style: Themes
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, dev.args=list(bg="transparent"), out.width="40%", fig.show="hold"}
+boys %>% 
+  filter(!is.na(reg)) %>% 
+  ggplot(aes(x = hgt, fill = reg)) +
+  geom_density(alpha = 0.5, colour = "transparent") +
+  xlim(0, 250) + 
+  labs(title = "Height across regions",
+       x     = "Height", 
+       fill  = "Region") +
+  theme_minimal()
+
+boys %>% 
+  filter(!is.na(reg)) %>% 
+  ggplot(aes(x = hgt, fill = reg)) +
+  geom_density(alpha = 0.5, colour = "transparent") +
+  xlim(0, 250) + 
+  labs(title = "Height across regions",
+       x     = "Height", 
+       fill  = "Region") +
+  theme_gray()
+
+boys %>% 
+  filter(!is.na(reg)) %>% 
+  ggplot(aes(x = hgt, fill = reg)) +
+  geom_density(alpha = 0.5, colour = "transparent") +
+  xlim(0, 250) + 
+  labs(title = "Height across regions",
+       x     = "Height", 
+       fill  = "Region") +
+  theme_classic()
+
+boys %>% 
+  filter(!is.na(reg)) %>% 
+  ggplot(aes(x = hgt, fill = reg)) +
+  geom_density(alpha = 0.5, colour = "transparent") +
+  xlim(0, 250) + 
+  labs(title = "Height across regions",
+       x     = "Height", 
+       fill  = "Region") +
+  theme_dark()
+```
 
 ## Helpful link in RStudio
 <img src="img/cheatsheet.png" style="display:block;width:90%;margin:0 auto;"></img>
