@@ -28,7 +28,7 @@ You can use data from anywhere. For example, you may use [Google dataset search]
 - make conclusions about your predictions
 - use plots where useful (they are almost always useful)
 
-### Format: GitHub submission of an RStudio project folder
+### Format: Submission of an RStudio project folder
 - Should have these components:
   - the dataset (csv, xlsx, sav, dat, json, or any other common format)
   - one .Rmd (R Markdown) file

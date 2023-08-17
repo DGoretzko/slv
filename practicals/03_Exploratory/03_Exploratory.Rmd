@@ -1,8 +1,8 @@
 ---
 title: "Exploratory Data Analysis"
 params:
-  answers: true # uncomment if answers are to be included
-  # answers: false
+  #answers: true # uncomment if answers are to be included
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,7 +14,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
+    #pandoc_args: --output=03_Exploratory_Answers.html # uncomment if answers are to be included
 ---
 
 # Introduction
@@ -445,7 +445,7 @@ When you have finished the practical,
 
 - enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file or folder, and 
 
-- hand in that zip or folder by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 4. 
+- hand in that zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Do so before Lecture 4. 
 
 ---
 

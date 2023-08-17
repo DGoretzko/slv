@@ -28,7 +28,7 @@ Assessment: Assignments and Exam  <br>
 
 ---
 
-All practicals and assignments should be hand in [through this repo](https://github.com/gerkovink/INFOMDA1-2022)
+All practicals and assignments should be hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset)
 
 ---
 
@@ -65,7 +65,7 @@ The final grade is computed as follows
 | Assignment 2 | 25 % |
 | Exam (BYOD)  | 50 % |
 
-To develop the necessary skills for completing the assignments and the presentations, `R` exercises must be made and submitted through the course GitHub page. These exercises are not graded, but students must fulfill them to pass the course.
+To develop the necessary skills for completing the assignments and the presentations, `R` exercises must be made and submitted via the course Blackboard page. These exercises are not graded, but students must fulfill them to pass the course.
 
 In order to pass the course, the final grade must be 5.5 or higher, your contribution to the course should be sufficient, all `R` exercises should be handed in and all assignments must have a passing grade. Otherwise, additional work is required concerning the assignments and/or exercises you have failed.
 
@@ -109,7 +109,7 @@ Students will learn to adapt these techniques in their way of thinking about ana
 
  
 ### Assignments
-Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [Course submission GitHub page](LINK). Each assignment will be graded. 
+Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [course Blackboard page](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Each assignment will be graded. 
 
 ### Grading
 Students will be evaluated on the following aspects:
@@ -231,9 +231,7 @@ This week's practical is on data wrangling. The answers are also given to you. U
 - [students.xlsx](practicals/01_Data_Wrangling/data/students.xlsx)
 - [SLV_practical1 - or create your own project](practicals/01_Data_Wrangling/SLV_practical1.zip)
 
-Hand in by PR from your fork [here](LINK).
-
-If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from a course of our colleague. There you can find video walkthroughs that detail the process. 
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ### A must watch
 The below 4-part series by Garrett Grolemund on `dplyr` and the `tidyverse` is very informative:
@@ -278,7 +276,7 @@ This week's practical is on data visualization. Code solutions are also given to
 - [Practical 2: Data visualization with code solutions](practicals/02_Data_Visualization/02_Data_Visualisation_answers.html)
 - [SLV_practical2 - or create your own project](practicals/02_Data_Visualization/SLV_practical2.zip)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ### Must watch
 The following lecture by [Dewey Dunnington](https://fishandwhistle.net) is quite informative. Also for those that already (think they) know the `ggplot2` package. 
@@ -313,14 +311,6 @@ This week's slides:
 - [Lecture Slides part 2](lectures/L3/Example_titanic.html)
 - [The titanic set from part 2](lectures/L3/titanic.csv). I don't remember where I got it from, originally. There is also a copy of the `titanic` data in `R`, but I found this data set and its labeling to be more informative.
 
-### Q&A
-If you'd like to get rid of the `DS_Store` files that Mac systems generate, then run the following in the terminal:
-```{r eval = FALSE, echo = TRUE}
-cd "PATH TO YOUR GIT REPO"
-git rm --cached "*.DS_Store"
-git commit -m "remove all .DS_Store"
-```
-
 
 ### Practical
 This week's practical is on exploratory data analysis. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
@@ -328,7 +318,7 @@ This week's practical is on exploratory data analysis. Code solutions are also g
 - [Practical 3: EDA](practicals/03_Exploratory/03_Exploratory.html)
 - [Practical 3: EDA with code solutions](practicals/03_Exploratory/03_Exploratory_Answers.html)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ## Column 2
 
@@ -370,7 +360,7 @@ This week's practical is on regression. Code solutions are also given to you. Us
 - [Practical 4: Regression](practicals/04_Regression/04_Regression.html)
 - [Practical 4: Regression with code solutions](practicals/04_Regression/04_Regression_answers.html)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ## Column 2
 
@@ -398,7 +388,7 @@ This week's practical is on classification. Code solutions are also given to you
 - [Practical 5: Classification answers](practicals/06_classification/06_classification_answers.html)
 - [data](practicals/06_classification/data.zip)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 **NOT HAND IN, BUT STILL USEFUL**: I also give you the following practical from last year. Please view and study the practical up to and including Exercise 10. No need to hand anything in. All the regularization (`glmnet`) exercises 11-19 are not relevant for this course, but you may of course use the methods in your Assignment 2 if you wish. Let me know if you have any questions. 
 
@@ -431,7 +421,7 @@ This week's practical is on classification. Code solutions are also given to you
 - [Practical 6: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html)
 - [data](practicals/07_classification_evaluation/data.zip)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ## Column 2
 
@@ -460,7 +450,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 - [Practical 7: Nonlinear regression](practicals/08_nonlinear_regression/08_nonlinear_regression.html)
 - [Practical 7: Nonlinear regression answers](practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ## Column 2
 
@@ -489,7 +479,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 - [Practical 8: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
 - [Data](practicals/09_ensemble/data.zip)
 
-Hand in by PR from your fork [here](LINK).
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset).
 
 ## Column 2
 

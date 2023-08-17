@@ -23,7 +23,7 @@ You can use data from anywhere. For example, you may use [Google dataset search]
 - descriptive and exploratory plots
 - explain what you did and why (maximum 5 paragraphs total) if applicable, note findings such as missingness, outliers or unlikely values or group differences, etc. 
 
-### Format: GitHub submission of an RStudio project folder
+### Format: Submission of an RStudio project folder
 - Should have these components:
   - the dataset (csv, xlsx, sav, dat, json, or any other common format)
   - one .Rmd (R Markdown) file
