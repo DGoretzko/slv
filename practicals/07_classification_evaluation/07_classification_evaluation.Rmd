@@ -1,8 +1,8 @@
 ---
 title: "Classification evaluation"
 params:
-  answers: true
-  # answers: false
+  #answers: true
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    pandoc_args: --output=07_classification_evaluation_answers.html
+    #pandoc_args: --output=07_classification_evaluation_answers.html
 ---
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(error = TRUE)
@@ -506,6 +506,6 @@ When you have finished the practical,
 
 - enclose all files of the project `07_classification_evaluation.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip by PR from your fork [here](https://github.com/gerkovink/INFOMDA1-2021). Do so before Lecture 9. That way we can iron out issues during the next Q&A in Week 8.
+- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Do so before Lecture 8. 
 
 ---
