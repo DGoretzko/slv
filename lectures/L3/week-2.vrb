@@ -1,9 +1,23 @@
-\begin{footnotesize}
+
+  \begin{footnotesize}
 \begin{verbatim}
-ggplot(quakes, aes(factor(mag),stations)) +
-   theme_tufte() +
-   geom_tufteboxplot(outlier.colour="transparent") +
-   theme(axis.title=element_blank())
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, color = class))
 \end{verbatim}
   \end{footnotesize}
-  \includegraphics[width=0.68\textwidth]{pics/tufte-box.png}
+  \includegraphics[width=.3\textwidth]{pics/hadley-simpleplot.png}
+
+
+  \begin{itemize}
+  \item Aesthetics:
+    \begin{itemize}
+    \item     $x$-position mapped to \emph{engine displacement}
+    \item   $y$-position mapped to \emph{highway miles per gallon}
+      \item color mapped to car type
+    \end{itemize}
+  \item Geometric objects: points
+    \item Transformation: identity
+  \item Scales: continuous, cartesian coordinates
+    \item No facets
+  \end{itemize}
+

@@ -310,6 +310,7 @@ This week's slides:
 - [Lecture Slides part 1](lectures/L3/week-2.pdf)
 - [Lecture Slides part 2](lectures/L3/Example_titanic.html)
 - [The titanic set from part 2](lectures/L3/titanic.csv). I don't remember where I got it from, originally. There is also a copy of the `titanic` data in `R`, but I found this data set and its labeling to be more informative.
+- A [Best Practices Guide for Data Visualization](https://royal-statistical-society.github.io/datavisguide/) published by the Royal Statistical Society for self-study. 
 
 
 ### Practical

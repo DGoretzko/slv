@@ -91,8 +91,8 @@
 \institute{
 	\footnotesize Department of Methodology and Statistics\\
 }
-\author[Vink | van Kesteren | van der Heijden]{Gerko Vink\\Erik-Jan van Kesteren\\Peter van der Heijden}
-\date{\includegraphics[height=1.5cm]{pics/uu-logo.png}\\
+\author[Vink | van Kesteren | van der Heijden | Goretzko]{Gerko Vink\\Erik-Jan van Kesteren\\Peter van der Heijden \\ David Goretzko}
+\date{\includegraphics[height=1.3cm]{pics/uu-logo.png}\\
 	
 	\footnotesize{\emph{Utrecht Applied Data Science}}}
 
@@ -271,7 +271,7 @@ ggplot(data = mpg) +
 \end{frame}
 
 \begin{frame}
-  What should I choose?
+  How should I visualize my data/ analysis results?
 \end{frame}
 
 \begin{frame}
@@ -364,12 +364,12 @@ ggplot(data = mpg) +
 
 
 
-\begin{frame}
-  {Nightingale Rose / Coxcomb chart}
-  
-  \includegraphics[width=0.8\textwidth]{pics/Nightingale-mortality.jpg}
-  
-\end{frame}
+% \begin{frame}
+%   {Nightingale Rose / Coxcomb chart}
+%   
+%   \includegraphics[width=0.8\textwidth]{pics/Nightingale-mortality.jpg}
+%   
+% \end{frame}
 
 
 \begin{frame}
@@ -392,17 +392,17 @@ ggplot(data = mpg) +
   \includegraphics[width=0.78\textwidth]{pics/tufte-scatter2.png}
 \end{frame}
 
-\begin{frame}[fragile]
-  \begin{footnotesize}
-\begin{verbatim}
-ggplot(quakes, aes(factor(mag),stations)) + 
-   theme_tufte() +
-   geom_tufteboxplot(outlier.colour="transparent") + 
-   theme(axis.title=element_blank())
-\end{verbatim}
-  \end{footnotesize}
-  \includegraphics[width=0.68\textwidth]{pics/tufte-box.png}
-\end{frame}
+% \begin{frame}[fragile]
+%   \begin{footnotesize}
+% \begin{verbatim}
+% ggplot(quakes, aes(factor(mag),stations)) + 
+%    theme_tufte() +
+%    geom_tufteboxplot(outlier.colour="transparent") + 
+%    theme(axis.title=element_blank())
+% \end{verbatim}
+%   \end{footnotesize}
+%   \includegraphics[width=0.68\textwidth]{pics/tufte-box.png}
+% \end{frame}
 
 \begin{frame}{Tufte wisdom}
   \begin{itemize}
@@ -470,6 +470,7 @@ ggplot(quakes, aes(factor(mag),stations)) +
       \item \textbf{Which comparisons} do I want?
           \item Maximize \textbf{data-ink} (within reason).
           \end{itemize}
+    \item There is no 'one solution fits all' approach!
   \end{itemize}
 \end{frame}
 
