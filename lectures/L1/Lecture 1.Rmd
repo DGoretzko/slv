@@ -168,14 +168,6 @@ You can find all materials at the following location:
 <center>[https://dgoretzko.github.io/slv/](https://dgoretzko.github.io/slv/)</center>
 <br>
 
-All course materials should be submitted through a pull-request from your Fork of
-
-<center>[LINK](LINK)</center>
-<br>
-
-The structure of your submissions should follow the corresponding repo's README. To make it simple, I have added an example for the first practical. 
-If you are unfamiliar with [GitHub](https://github.com), forking and/or pull-request, please study [this exercise](https://www.gerkovink.com/markup/Wk1/Exercise_1.html) from another course. There you can find video walkthroughs that detail the process. 
-
 # Course overview
 
 ## Team
