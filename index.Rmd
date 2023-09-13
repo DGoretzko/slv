@@ -110,6 +110,7 @@ Students will learn to adapt these techniques in their way of thinking about ana
  
 ### Assignments
 Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [course Blackboard page](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Each assignment will be graded. 
+If you want to use a version control tool for your group work, you might want to check out [GitHub](https://github.com). It is not mandatory to use it, but if you want to give it a try, you can study [this GitHub tutorial](https://docs.github.com/en/get-started/quickstart/hello-world). You can also use [GitHub Desktop](https://desktop.github.com/) to handle your commits and merge requests. **Don't make your workflow to complicated, though!**
 
 ### Grading
 Students will be evaluated on the following aspects:
