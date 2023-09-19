@@ -1,8 +1,8 @@
 ---
 title: "Data Visualisation using ggplot2"
 params:
-  #answers: true # uncomment if answers are to be included
-  answers: false #uncomment if answers are not to be included
+  answers: true # uncomment if answers are to be included
+  # answers: false #uncomment if answers are not to be included
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -14,7 +14,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    #pandoc_args: --output=02_Data_Visualisation_answers.html # uncomment if answers are to be included
+    pandoc_args: --output=02_Data_Visualisation_answers.html # uncomment if answers are to be included
 ---
 
 # Introduction
@@ -307,12 +307,12 @@ gg_students %>%
 
 ```{r geomdens4, include = params$answers}
 gg_students %>% 
-  ggplot(aes(x = grade, fill = prog)) +
-  geom_density(alpha = .5, colour = NA) +
-  geom_rug(size = 1, colour = "light seagreen") +
-  theme_minimal() +
-  labs(y = "", fill = "Programme") +
-  xlim(0, 10)
+     ggplot(aes(x = grade, fill = prog)) +
+     geom_density(alpha = .5, colour = NA) +
+     geom_rug(aes(colour = prog),size = 1) +
+     theme_minimal() +
+     labs(y = "", fill = "Programme", colour = "Programme") +
+     xlim(0, 10)
 ```
 
 
