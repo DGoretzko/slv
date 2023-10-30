@@ -475,7 +475,7 @@ Study the following materials
 
 This week's slides:
 
-- [Lecture 8](lectures/L9/week-9.pdf)
+- [Lecture 8](lectures/L8/week-8-new.pdf)
 
 
 ### Practical
