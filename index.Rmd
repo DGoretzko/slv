@@ -468,10 +468,10 @@ Study the following materials
 ### Lecture (Monday 9am - [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500))
 This week's slides:
 
-- [Lecture Slides]()
+- [Lecture Slides](lectures/L10/Lecture-10.html)
 
 ### Practical
-This week's practical is on data visualization. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+This week's practical is on conducting ML benchmarks with `mlr3`. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
 
 
 Hand in [via blackboard]().

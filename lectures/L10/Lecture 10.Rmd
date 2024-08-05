@@ -1,0 +1,326 @@
+---
+title: "ML Benchmarks"
+author: "David Goretzko"
+date: "Supervised Learning and Visualization"
+output: 
+  ioslides_presentation:
+    logo: logo.png
+    smaller: yes
+    widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+```
+
+<style>
+
+.notepaper {
+  position: relative;
+  margin: 30px auto;
+  padding: 29px 20px 20px 45px;
+  width: 680px;
+  line-height: 30px;
+  color: #6a5f49;
+  text-shadow: 0 1px 1px ;
+  background-color: #f2f6c1;
+  background-image: -webkit-radial-gradient(center, cover, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 90%), -webkit-repeating-linear-gradient(top, transparent 0%, transparent 29px, rgba(239, 207, 173, 0.7) 29px, rgba(239, 207, 173, 0.7) 30px);
+  background-image: -moz-radial-gradient(center, cover, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 90%), -moz-repeating-linear-gradient(top, transparent 0%, transparent 29px, rgba(239, 207, 173, 0.7) 29px, rgba(239, 207, 173, 0.7) 30px);
+  background-image: -o-radial-gradient(center, cover, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 90%), -o-repeating-linear-gradient(top, transparent 0%, transparent 29px, rgba(239, 207, 173, 0.7) 29px, rgba(239, 207, 173, 0.7) 30px);
+  border: 1px solid #c3baaa;
+  border-color: rgba(195, 186, 170, 0.9);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 5px #d8e071, 0 0 1px rgba(0, 0, 0, 0.1), 0 2px rgba(0, 0, 0, 0.02);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 5px #d8e071, 0 0 1px rgba(0, 0, 0, 0.1), 0 2px rgba(0, 0, 0, 0.02);
+}
+
+.notepaper:before, .notepaper:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.notepaper:before {
+  left: 28px;
+  width: 2px;
+  border: solid #efcfad;
+  border-color: rgba(239, 207, 173, 0.9);
+  border-width: 0 1px;
+}
+
+.notepaper:after {
+  z-index: -1;
+  left: 0;
+  right: 0;
+  background: rgba(242, 246, 193, 0.9);
+  border: 1px solid rgba(170, 157, 134, 0.7);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.quote {
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+.curly-quotes:before, .curly-quotes:after {
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+  line-height: 48px;
+  font-size: 50px;
+  opacity: .2;
+}
+
+.curly-quotes:before {
+  content: '\201C';
+  margin-right: 4px;
+  margin-left: -8px;
+}
+
+.curly-quotes:after {
+  content: '\201D';
+  margin-left: 4px;
+  margin-right: -8px;
+}
+
+.quote-by {
+  display: block;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 13px;
+  font-style: italic;
+  color: #84775c;
+}
+
+.lt-ie8 .notepaper {
+  padding: 15px 25px;
+}
+
+div.footnotes {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 70px;
+  width: 80%;
+  font-size: 0.6em;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('slide:not(.backdrop):not(.title-slide)').append('<div class=\"footnotes\">');
+
+  $('footnote').each(function(index) {
+    var text  = $(this).html();
+    var fnNum = (index+1).toString();
+    $(this).html(fnNum.sup());
+
+    var footnote   = fnNum + '. ' + text + '<br/>';
+    var oldContent = $(this).parents('slide').children('div.footnotes').html();
+    var newContent = oldContent + footnote;
+    $(this).parents('slide').children('div.footnotes').html(newContent);
+  });
+});
+</script>
+
+## This lecture
+
+1. Resampling (Recap + Nested Resampling)
+2. Hyperparameter Tuning
+3. Model Classes
+4. Benchmarking
+
+# Resampling
+
+## Recap: Cross-Validation (CV)
+
+-   Random partitioning in $k$ equally sized parts (usually 5 or 10)
+-   $k-1$ parts serve as training set, remaining fold is test set
+-   Each part is used as the test set once
+-   The estimated prediction error is averaged over all *folds*
+
+## Cross-Validation (CV)
+
+```{r, echo=FALSE}
+include_graphics("3CV.png")
+```
+
+## Repeated Cross-Validation (RCV)
+
+- same as CV, but multiple runs with different seeds (e.g., $10 \times 10-$fold CV)
+- different seeds = subset structures are different
+- averaging performance estimates over repetitions stabilizes results (especially in combination with small sample sizes) and can be helpful when using them to perform a significance test (is model A better than model B) 
+
+```{r, echo=FALSE}
+Model_A = sample(350:600,100, replace = TRUE)/1000
+Model_B = sample(300:500,100, replace = TRUE)/1000
+boxplot(Model_A, Model_B, ylab = "MSE", xlab = "Model", main = "Significant Difference?")
+```
+
+## Nested Resampling
+
+When tuning hyperparameters, a more complex resampling strategy is necessary:
+
+- *inner resampling* is used to select hyperparameters and pre-process the data (select variables, impute missing data, scale variables, etc.)
+- *outer resampling* is used to evaluate the full data analysis pipeline
+
+This is necessary to obtain "fair", i.e., not overoptimisitc performance estimates
+
+## Nested Resampling
+
+```{r, echo=FALSE}
+include_graphics("nestedx.png")
+```
+
+# Hyperparameter Tuning (Example: Tree-based Methods)
+
+## Decision Trees
+
+- Recursive binary splitting to find subsets that are homogeneous regarding outcome:
+
+```{r, echo=FALSE, out.width="80%"}
+include_graphics("Rose.png")
+```
+
+## Random Forests
+
+- Aggregation of multiple decision trees
+- Combination of Bagging (Bootstrap Aggregation) and variable selection
+- Ensemble of de-correlated deep trees promises better out-of-sample performance:
+
+```{r, echo=FALSE, out.width="40%"}
+include_graphics("bagvsrf.png")
+```
+
+## Hyperparameters of Random Forest
+
+- Minimum node size in node to attempt a split
+- Maximum tree depth
+- Minimum impurity reduction
+- Minumum number of observations in leaf nodes
+- Number of trees
+- Number of predictors considered for each split (often called *mtry*)
+
+## Hyperparameters of Random Forest
+
+- Although random forests usually work relatively well with default settings, tuning may be beneficial to improve accuracy (classification) or increase the precision (regression task)
+
+- Remember: Tuning and selection of hyperparameters needs to be separated from performance evaluation (inner resampling strategy within modeling pipeline)!
+
+## Hyperparamer Tuning - Grid Search
+
+- Specify a grid of parameter values that should be considered during tuning:
+
+```{r, echo=FALSE, out.width="50%"}
+grid = expand.grid(mtry = c(10, 15, 20), ntrees = c(100, 250, 500))
+kable(grid) %>% 
+  kable_styling(latex_options="scale_down", font_size = 9)
+```
+
+- Every combination of hyperparameter settings is used to train a model and the performance of each model is evaluated on a test-set to determine the best parameter combination (again: this should be done in an inner loop to avoid overoptimistic performance evaluations for the overall modeling pipeline)
+
+## Hyperparamer Tuning - Grid Search
+
+```{r, echo=FALSE, out.width="50%"}
+grid = expand.grid(mtry = c(10, 15, 20), ntrees = c(100, 250, 500))
+grid$MSE = c(sample(400:600, 6)/1000, 0.322, sample(400:600, 2)/1000)
+kable(grid) %>% 
+  kable_styling(latex_options="scale_down", font_size = 9) %>%
+  row_spec(7, bold = T, color = "red")
+```
+
+- Hyperparameter settings with the best performance metric (here: smallest MSE) are selected
+
+## Hyperparamer Tuning - Random Search
+
+- Easy to imagine that grid search is only feasible if few values for some selected hyperparameters are tested
+- The computational demand increases drastically when many hyperparameters (see, for example, the XGBoost) should be optimized and many potential values (and their interactions) have to be evaluated:
+
+    - Testing 20 values for 4 parameters results in 160,000 models that have to be trained
+    
+- Random search as an alternative with limited budget (can be more efficient, especially when some hyperparameters do not strongly impact the model performance)
+
+## Hyperparameter Tuning - More Advandced Approaches
+
+- Model-based/ Bayesian Optimization (MBO)
+- (Generalized) Simulated Annealing
+- Iterative Racing:
+
+```{r, echo=FALSE, out.width="40%"}
+include_graphics("irace.jpg")
+```
+
+## Tunability of Algorithms
+
+Some ML algorithms are more strongly affected by hyperparameter settings than others - i.e., they have a higher tunability which means that have to tune the hyperparamters to obtain good predictions (Probst et al., 2019).
+
+- the random forest is an example of a good "of the shelf algorithm"
+- SVM requires careful tuning of kernel function
+- XGBoost with many hyperparameters usually requires extensive tuning
+
+# Benchmarks
+
+## Which Model Should We Choose?
+
+Contrary to classical statistical modeling, machine learning is usually used in a more exploratory and purely data-driven manner. That said, we do not know beforehand how the outcome is related to the predictors and therefore, we also do not know which algorithm is going to work best for a specific data set/ prediction task.
+
+## Model Classes
+
+- (Generalized) linear models + polynomial regression
+- Generalized additive models (inter alia using splines)
+- Support vector machines
+- k-nearest-neighbors
+- Tree-based methods (bagging, boosting)
+- neural networks
+- ...
+
+## Flexibility-Interpretability Trade-Off
+
+```{r, echo=FALSE, out.width="80%"}
+include_graphics("MLlearners.png")
+```
+
+## Which Model Should We Choose?
+
+- Idea: Conducting a small benchmark experiment to compare different algorithms
+- All models are trained on the same data (e.g., using the same folds in CV)
+- Hyperparameter tuning should be "fair":
+
+    - some algorithms are good off-the-shelf algorithms that work reasonably well with default parameters (e.g., random forests), while for other algorithms it is almost impossible to come up with appropriate defaults (e.g., support vector machines)
+    - if one model is extensively tuned and another model is not, the question remains whether the model with highly optimized hyperparameters is actually better
+
+- **Always** include a meaningful baseline for comparison, e.g., a *featureless learner* predicting the outcomes mean (regression task) or mode (classification task)
+
+## Benchmark Studies
+
+- Often a good idea to compare a linear model (e.g., LASSO) to one or more complex models
+- If the more complex model does not outperform a simpler, more interpretable model, the latter is clearly favourable
+- Sometimes it makes sense to look at different performance measures in a benchmark experiment:
+   
+    - e.g., while Model A shows the highest accuracy, Model B might be more sensitive (higher true positive rate/ recall) which could be preferable in a situation, where a rare event (e.g., a disease) should be predicted
+    - sometimes a tie between two models regarding a primary outcome can be broken using a secondary performance metric
+    
+## ML in R - The mlr3verse
+
+- So far, we have used different packages to train different models (e.g., rpart, ranger), *mlr3* provides an ecosystem with wrapper functions for the most common algorithms
+- It also facilitates:
+
+      - resampling (inner and outer resampling strategy) and performance evaluation
+      - data pre-processing through graph-learners (i.e., creating a data analysis pipeline)
+      - hyperparameter tuning with state-of-the-art tuning schemes
+      (model-based optimization, iterative racing, etc.)
+      - model comparisons via benchmarking
+      - the implementation of cost-sensitive learning (e.g., Sterner, Pargent, & Goretzko, 2023)
+      - model stacking
+      - interpretable machine learning
+      - visualization
+      
