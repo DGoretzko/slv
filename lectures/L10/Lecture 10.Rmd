@@ -380,7 +380,7 @@ xgboost <- lrn("classif.xgboost", predict_type = "prob")
 Define hyperparameters that should be tuned and create modeling pipeline for learners whose hyperparameters need tuning:
 
 ```{r, eval=FALSE}
-# Example indicating xgboost for which two hyperparameters are tuned:
+# Example: xgboost for which two hyperparameters are tuned:
 param_set_xgb <- ps(
   nrounds = p_int(lower = 1, upper = 500),
   eta = p_dbl(lower = 0.001, upper = 0.01))
