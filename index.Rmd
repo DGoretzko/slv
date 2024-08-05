@@ -471,8 +471,11 @@ This week's slides:
 - [Lecture Slides](lectures/L10/Lecture-10.html)
 
 ### Practical
-This week's practical is on conducting ML benchmarks with `mlr3`. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
+This week's practical is about conducting ML benchmarks with `mlr3`. Code solutions are also given to you. Use these answers to help yourself when you're stuck. 
 
+- [Practical 8: ML Benchmark](practicals/10-benchmark/10_benchmark.html)
+- [Practical 8: ML Benchmark answers](practicals/10-benchmark/10_benchmark_answers.html)
+- [Data](practicals/10-benchmark/data.zip)
 
 Hand in [via blackboard]().
 
@@ -482,13 +485,18 @@ Hand in [via blackboard]().
 
 ### Required reading
 
-Study the following materials
-
-
+Recap: [ISLR Chapters 4,5,8 and 9](https://www.statlearning.com)
 
 ### Useful links
-The following links may be useful
+The following links may be useful:
 
+- [mlr3-book](https://mlr3book.mlr-org.com/)
+
+especially:
+
+- [mlr3-book Chapter 3](https://mlr3book.mlr-org.com/chapters/chapter3/evaluation_and_benchmarking.html)
+
+- [mlr3-book Chapter 4](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html)
 
 <!-- # Practice Exam -->
 
