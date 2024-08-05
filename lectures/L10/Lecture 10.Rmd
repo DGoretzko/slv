@@ -324,3 +324,128 @@ include_graphics("MLlearners.png")
       - interpretable machine learning
       - visualization
       
+## ML Benchmarks in mlr3
+
+Create a task (i.e., what should be predicted and which data is used):
+
+```{r, eval=FALSE}
+# here classification task
+task <- TaskClassif$new(id = "ID",
+  backend = data, # data set
+  target = "Outcome", 
+  positive = "Positive Class") # only in binary classification task
+```
+
+Define resampling scheme (inner and outer resampling), e.g.,:
+
+```{r, eval=FALSE}
+# define resampling using pre-specified resampling concepts such as RCV and CV
+res_outer <- rsmp("repeated_cv", repeats = 3, folds = 5)
+res_inner <- rsmp("cv", folds = 5)
+```
+
+## ML Benchmarks in mlr3
+
+Define tuning, if necessary:
+
+```{r, eval=FALSE}
+# define tuning, e.g., using random search with 1000 iterations
+terminator <- trm("evals", n_evals = 1000)
+tuner <- tnr("random_search")
+```
+
+Define performance measure for inner resampling, i.e., that is used to select hyperparemeter settings
+
+```{r eval=FALSE}
+# define inner performance measure, e.g., accuracy
+mes_acc <- msr("classif.acc")
+```
+
+## ML Benchmarks in mlr3
+
+Define algorithms (mlr3: learners) that should be tested:
+
+```{r, eval=FALSE}
+# define learners, use featureless learner as baseline;
+# here: classical logistic regression (simple model), random forest ("ranger")
+# and xgboost
+baseline <- lrn("classif.featureless",  predict_type = "prob")
+logreg <- lrn("classif.log_reg", predict_type = "prob")
+ranger <- lrn("classif.ranger", predict_type = "prob")
+xgboost <- lrn("classif.xgboost", predict_type = "prob")
+```
+
+## ML Benchmarks in mlr3 {.smaller}
+
+Define hyperparameters that should be tuned and create modeling pipeline for learners whose hyperparameters need tuning:
+
+```{r, eval=FALSE}
+# Example indicating xgboost for which two hyperparameters are tuned:
+param_set_xgb <- ps(
+  nrounds = p_int(lower = 1, upper = 500),
+  eta = p_dbl(lower = 0.001, upper = 0.01))
+
+xgb_tuned <- AutoTuner$new(
+  learner = xgboost, # basic xgboost learner (see above)
+  resampling = res_inner, # inner resampling to evaluate different param sets
+  measure = mes_acc, # performance measure to select parameters (see above)
+  search_space = param_set_xgb, # parameter range that is tested
+  terminator = terminator, # termination criterion
+  tuner = tuner) # tuning scheme (here: random search)
+# new id to find model in output 
+# (necessary if multiple xgbs with different tuning schemes are evaluated) 
+xgb_tuned$id <- "classif.xgboost.tuned" 
+```
+
+## ML Benchmarks in mlr3
+
+Set up benchmark grid with all learners and tasks (here only one task, but theoretically you could benchmark different algorithms using different task which would be a benchmark experiment that rather focuses on the methodological differences of the algorithms and tested pipelines than the specific tasks)
+
+```{r, eval=FALSE}
+# Create benchmark grid defining the task(s), learners and the 
+# resampling strategy used for performance evaluation (i.e., outer resampling)
+grid <- benchmark_grid(tasks = list(task),
+                       learners = list(baseline, logreg, ranger, xgb_tuned),
+                       resamplings = list(res_outer)
+                       )
+```
+
+Run the benchmark experiment
+
+```{r, eval = FALSE}
+results <- benchmark(grid)
+```
+
+## ML Benchmarks in mlr3 
+
+Analyze results using different performance metrics, e.g., accuracy, sensitivity, and specificity as well as obtaining standard deviations for all metrics to get an idea of how stable/unstable the aggregated parameter estimates are:
+
+```{r, eval = FALSE}
+mes_list <- list(
+  msr("classif.sensitivity"),
+  msr("classif.sensitivity", id = "classif.sensitivity.sd", aggregator = sd),
+  msr("classif.specificity"),
+  msr("classif.specificity", id = "classif.specificity.sd", aggregator = sd),
+  msr("classif.acc"),
+  msr("classif.acc", id = "classif.acc.sd", aggregator = sd)
+  )
+
+results$aggregate(mes_list)
+```
+
+Quick visualization of the results:
+
+```{r, eval = FALSE}
+mlr3viz::autoplot(results, measure = msr("classif.acc"), type = "boxplot")
+```
+
+## ML Benchmarks in mlr3 
+
+- Load the complete *mlr3verse* to get the full access to all wrapper functions for a variety of algorithms (*mlr3extralearners*), tools for visualizing results (*mlr3viz*), and many more (advanced) tools for conducting ML experiments in R:
+
+    - Very convenient (all-in-one framework)
+    - Easy to extend (S6 class)
+    - Better control over train-test separation (avoid data leakage!)
+    - most comprehensive ecosystem in R that is constantly updated
+
+- More detailed descriptions and tutorials to deal with more advanced problems can be found under https://mlr3.mlr-org.com/ 
