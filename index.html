@@ -2048,9 +2048,9 @@ via the course Blackboard page. These exercises are not graded, but
 students must fulfill them to pass the course.</p>
 <p>In order to pass the course, the final grade must be 5.5 or higher,
 your contribution to the course should be sufficient, all <code>R</code>
-exercises should be handed in and all assignments must have a passing
-grade. Otherwise, additional work is required concerning the assignments
-and/or exercises you have failed.</p>
+exercises should be handed in and all assignments and the final exam
+must have a passing grade. Otherwise, additional work is required
+concerning the assignments and/or exercises you have failed.</p>
 </div>
 </div>
 <div id="column-2" class="section level2">
@@ -2386,30 +2386,40 @@ complicated, though!</strong></p>
 <div id="lecture-monday-9am---dalton-500-8.27" class="section level3">
 <h3>Lecture (Monday 9am - <a
 href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
-<p>Please find the <a href="lectures/L1/Lecture-1.html">Lecture Slides
-here</a></p>
+<p>Please find the <a href="lectures/L1/Lecture-1-new.html">Lecture
+Slides here</a></p>
 </div>
 <div id="practical" class="section level3">
 <h3>Practical</h3>
-<p>This week’s practical is on data wrangling. The answers are also
-given to you. Use these answers to help yourself when you’re stuck.</p>
+<p>This week’s practical is split into two parts - <em>practical 1</em>
+on data wrangling and basics in R and <em>practical 2</em> on data
+visualization with <em>ggplot2</em>. The answers are also given to you.
+Use these answers to help yourself when you’re stuck.</p>
 <ul>
-<li><a
+<li><p><a
 href="practicals/01_Data_Wrangling/01_Data_Wrangling.html">Practical 1:
-Data wrangling</a></li>
-<li><a
+Data wrangling</a></p></li>
+<li><p><a
 href="practicals/01_Data_Wrangling/01_Data_Wrangling_Answers.html">Practical
-1: Data wrangling with answers</a></li>
-<li><a
-href="practicals/01_Data_Wrangling/data/googleplaystore.csv">googleplaystore.csv</a></li>
-<li><a
-href="practicals/01_Data_Wrangling/data/students.xlsx">students.xlsx</a></li>
-<li><a
+1: Data wrangling with answers</a></p></li>
+<li><p><a
+href="practicals/01_Data_Wrangling/data/googleplaystore.csv">googleplaystore.csv</a></p></li>
+<li><p><a
+href="practicals/01_Data_Wrangling/data/students.xlsx">students.xlsx</a></p></li>
+<li><p><a
 href="practicals/01_Data_Wrangling/SLV_practical1.zip">SLV_practical1 -
-or create your own project</a></li>
+or create your own project</a></p></li>
+<li><p><a
+href="practicals/02_Data_Visualization/02_Data_Visualization.html">Practical
+2: Data visualization</a></p></li>
+<li><p><a
+href="practicals/02_Data_Visualization/02_Data_Visualisation_answers.html">Practical
+2: Data visualization with code solutions</a></p></li>
+<li><p><a
+href="practicals/02_Data_Visualization/SLV_practical2.zip">SLV_practical2
+- or create your own project</a></p></li>
 </ul>
-<p>Hand in <a
-href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
+<p>Hand in your answers to both practicals separately <a href="">via
 blackboard</a>.</p>
 </div>
 <div id="a-must-watch" class="section level3">
@@ -2425,6 +2435,13 @@ the <code>tidyverse</code> is very informative: <br>
 <iframe width="200" height="100" src="https://www.youtube-nocookie.com/embed/Zc_ufg4uW4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="200" height="100" src="https://www.youtube-nocookie.com/embed/AuBgYDCg1Cg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+<p>The following lecture by <a href="https://fishandwhistle.net">Dewey
+Dunnington</a> is quite informative. Also for those that already (think
+they) know the <code>ggplot2</code> package.</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nqI5CmdUYRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
 </div>
 </div>
 <div id="column-2-2" class="section level2">
@@ -2436,7 +2453,8 @@ the <code>tidyverse</code> is very informative: <br>
 <li><a
 href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
 Chapter 1</a></li>
-<li><a href="https://r4ds.had.co.nz">R4DS Chapters 1 and 9 - 16</a></li>
+<li><a href="https://r4ds.had.co.nz">R4DS Chapters 1 -3 and 9 -
+16</a></li>
 </ul>
 </div>
 <div id="useful-links" class="section level3">
@@ -2446,6 +2464,8 @@ Chapter 1</a></li>
 <li><a href="https://www.gerkovink.com/prepR/">Gerko’s quick
 <code>R</code> scripting course with video walkthroughs</a></li>
 <li><a href="https://www.statlearning.com">ISLR’s web page</a></li>
+<li><a href="https://ggplot2.tidyverse.org"><code>ggplot</code>’s
+reference page</a></li>
 </ul>
 </div>
 </div>
@@ -2455,76 +2475,6 @@ Chapter 1</a></li>
 <div id="column-1-5" class="section level2">
 <h2>Column 1</h2>
 <div id="lecture-monday-9am---dalton-500-8.27-1" class="section level3">
-<h3>Lecture (Monday 9am - <a
-href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
-<p>This week’s slides:</p>
-<ul>
-<li><a href="lectures/L2/Lecture_2_WS.html">Lecture Slides</a></li>
-</ul>
-</div>
-<div id="practical-1" class="section level3">
-<h3>Practical</h3>
-<p>This week’s practical is on data visualization. Code solutions are
-also given to you. Use these answers to help yourself when you’re
-stuck.</p>
-<ul>
-<li><a
-href="practicals/02_Data_Visualization/02_Data_Visualization.html">Practical
-2: Data visualization</a></li>
-<li><a
-href="practicals/02_Data_Visualization/02_Data_Visualisation_answers.html">Practical
-2: Data visualization with code solutions</a></li>
-<li><a
-href="practicals/02_Data_Visualization/SLV_practical2.zip">SLV_practical2
-- or create your own project</a></li>
-</ul>
-<p>Hand in <a
-href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
-blackboard</a>.</p>
-</div>
-<div id="must-watch" class="section level3">
-<h3>Must watch</h3>
-<p>The following lecture by <a href="https://fishandwhistle.net">Dewey
-Dunnington</a> is quite informative. Also for those that already (think
-they) know the <code>ggplot2</code> package.</p>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nqI5CmdUYRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</center>
-</div>
-</div>
-<div id="column-2-3" class="section level2">
-<h2>Column 2</h2>
-<div id="required-reading-1" class="section level3">
-<h3>Required reading</h3>
-<p>Study the following materials</p>
-<ul>
-<li><a href="https://r4ds.had.co.nz">R4DS Chapters 2 and 3</a></li>
-</ul>
-</div>
-<div id="useful-links-1" class="section level3">
-<h3>Useful links</h3>
-<p>The following links may be useful</p>
-<ul>
-<li><a href="https://hbr.org/2016/06/visualizations-that-really-work">A
-Harvard Business Review article on communication through visuals</a>.
-Good to also study some content that relate to the business-side of
-information exchange.</li>
-<li><a href="https://ggplot2.tidyverse.org"><code>ggplot</code>’s
-reference page</a></li>
-<li><a
-href="https://www.gerkovink.com/markup/Wk1/Solution_to_Ex1_future.html">A
-simulation that demonstrates the (mis)use of confidence
-intervals</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="week-3" class="section level1">
-<h1>Week 3</h1>
-<div id="column-1-6" class="section level2">
-<h2>Column 1</h2>
-<div id="lecture-monday-9am---dalton-500-8.27-2" class="section level3">
 <h3>Lecture (Monday 9am - <a
 href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
 <p>This week’s slides:</p>
@@ -2542,26 +2492,26 @@ Practices Guide for Data Visualization</a> published by the Royal
 Statistical Society for self-study.</li>
 </ul>
 </div>
-<div id="practical-2" class="section level3">
+<div id="practical-1" class="section level3">
 <h3>Practical</h3>
 <p>This week’s practical is on exploratory data analysis. Code solutions
 are also given to you. Use these answers to help yourself when you’re
 stuck.</p>
 <ul>
-<li><a href="practicals/03_Exploratory/03_Exploratory.html">Practical 3:
+<li><a href="practicals/03_Exploratory/03_Exploratory.html">Practical 2:
 EDA</a></li>
 <li><a
 href="practicals/03_Exploratory/03_Exploratory_Answers.html">Practical
-3: EDA with code solutions</a></li>
+2: EDA with code solutions</a></li>
 </ul>
 <p>Hand in <a
 href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
 blackboard</a>.</p>
 </div>
 </div>
-<div id="column-2-4" class="section level2">
+<div id="column-2-3" class="section level2">
 <h2>Column 2</h2>
-<div id="required-reading-2" class="section level3">
+<div id="required-reading-1" class="section level3">
 <h3>Required reading</h3>
 <p>Study the following materials</p>
 <ul>
@@ -2571,7 +2521,7 @@ blackboard</a>.</p>
 Chapter 2.2, 2.3 and 2.6</a></li>
 </ul>
 </div>
-<div id="useful-links-2" class="section level3">
+<div id="useful-links-1" class="section level3">
 <h3>Useful links</h3>
 <p>The following links may be useful</p>
 <ul>
@@ -2587,7 +2537,7 @@ href="https://towardsdatascience.com/how-to-use-color-palettes-for-your-data-vis
 color palette tutorial for seaborn, vega-altair, and ggplot2</a></li>
 </ul>
 </div>
-<div id="must-watch-1" class="section level3">
+<div id="must-watch" class="section level3">
 <h3>Must watch</h3>
 <p>The following lecture by <a
 href="https://www.edwardtufte.com/tufte/">Edward Tufte</a> is quite
@@ -2596,6 +2546,45 @@ nice.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rHUDJ8RyseQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </center>
+</div>
+</div>
+</div>
+<div id="week-3" class="section level1">
+<h1>Week 3</h1>
+<div id="column-1-6" class="section level2">
+<h2>Column 1</h2>
+<div id="lecture-monday-9am---dalton-500-8.27-2" class="section level3">
+<h3>Lecture (Monday 9am - <a
+href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
+<p>This week’s slides:</p>
+<ul>
+<li><a href="lectures/L4/week-4.pdf">Lecture 3</a></li>
+</ul>
+</div>
+<div id="practical-2" class="section level3">
+<h3>Practical</h3>
+<p>This week’s practical is on regression. Code solutions are also given
+to you. Use these answers to help yourself when you’re stuck.</p>
+<ul>
+<li><a href="practicals/04_Regression/04_Regression.html">Practical 3:
+Regression</a></li>
+<li><a
+href="practicals/04_Regression/04_Regression_answers.html">Practical 3:
+Regression with code solutions</a></li>
+</ul>
+<p>Hand in <a
+href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
+blackboard</a>.</p>
+</div>
+</div>
+<div id="column-2-4" class="section level2">
+<h2>Column 2</h2>
+<div id="required-reading-2" class="section level3">
+<h3>Required reading</h3>
+<p>Study the following materials</p>
+<p>-<a
+href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
+Chapter 1, 2 and 3</a></p>
 </div>
 </div>
 </div>
@@ -2608,59 +2597,20 @@ nice.</p>
 href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
 <p>This week’s slides:</p>
 <ul>
-<li><a href="lectures/L4/week-4.pdf">Lecture 4</a></li>
+<li><a href="lectures/L6/week-6.pdf">Lecture 4</a></li>
 </ul>
 </div>
 <div id="practical-3" class="section level3">
-<h3>Practical</h3>
-<p>This week’s practical is on regression. Code solutions are also given
-to you. Use these answers to help yourself when you’re stuck.</p>
-<ul>
-<li><a href="practicals/04_Regression/04_Regression.html">Practical 4:
-Regression</a></li>
-<li><a
-href="practicals/04_Regression/04_Regression_answers.html">Practical 4:
-Regression with code solutions</a></li>
-</ul>
-<p>Hand in <a
-href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
-blackboard</a>.</p>
-</div>
-</div>
-<div id="column-2-5" class="section level2">
-<h2>Column 2</h2>
-<div id="required-reading-3" class="section level3">
-<h3>Required reading</h3>
-<p>Study the following materials</p>
-<p>-<a
-href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
-Chapter 1, 2 and 3</a></p>
-</div>
-</div>
-</div>
-<div id="week-5" class="section level1">
-<h1>Week 5</h1>
-<div id="column-1-8" class="section level2">
-<h2>Column 1</h2>
-<div id="lecture-monday-9am---dalton-500-8.27-4" class="section level3">
-<h3>Lecture (Monday 9am - <a
-href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
-<p>This week’s slides:</p>
-<ul>
-<li><a href="lectures/L6/week-6.pdf">Lecture 5</a></li>
-</ul>
-</div>
-<div id="practical-4" class="section level3">
 <h3>Practical</h3>
 <p>This week’s practical is on classification. Code solutions are also
 given to you. Use these answers to help yourself when you’re stuck.</p>
 <ul>
 <li><a
-href="practicals/06_classification/06_classification.html">Practical 5:
+href="practicals/06_classification/06_classification.html">Practical 4:
 Classification</a></li>
 <li><a
 href="practicals/06_classification/06_classification_answers.html">Practical
-5: Classification answers</a></li>
+4: Classification answers</a></li>
 <li><a href="practicals/06_classification/data.zip">data</a></li>
 </ul>
 <p>Hand in <a
@@ -2682,6 +2632,50 @@ generate_formulas() code</a></li>
 </ul>
 </div>
 </div>
+<div id="column-2-5" class="section level2">
+<h2>Column 2</h2>
+<div id="required-reading-3" class="section level3">
+<h3>Required reading</h3>
+<p>Study the following materials</p>
+<ul>
+<li><a
+href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
+Sections 4.1, 4.2, 4.3, 4.4.1, 4.4.2 and 8.1</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="week-5" class="section level1">
+<h1>Week 5</h1>
+<div id="column-1-8" class="section level2">
+<h2>Column 1</h2>
+<div id="lecture-monday-9am---dalton-500-8.27-4" class="section level3">
+<h3>Lecture (Monday 9am - <a
+href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
+<p>This week’s slides:</p>
+<ul>
+<li><a href="lectures/L7/week-7.pdf">Lecture 5</a></li>
+</ul>
+</div>
+<div id="practical-4" class="section level3">
+<h3>Practical</h3>
+<p>This week’s practical is on classification. Code solutions are also
+given to you. Use these answers to help yourself when you’re stuck.</p>
+<ul>
+<li><a
+href="practicals/07_classification_evaluation/07_classification_evaluation.html">Practical
+5: Classification evaluation</a></li>
+<li><a
+href="practicals/07_classification_evaluation/07_classification_evaluation_answers.html">Practical
+5: Classification evaluation answers</a></li>
+<li><a
+href="practicals/07_classification_evaluation/data.zip">data</a></li>
+</ul>
+<p>Hand in <a
+href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
+blackboard</a>.</p>
+</div>
+</div>
 <div id="column-2-6" class="section level2">
 <h2>Column 2</h2>
 <div id="required-reading-4" class="section level3">
@@ -2690,7 +2684,7 @@ generate_formulas() code</a></li>
 <ul>
 <li><a
 href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
-Sections 4.1, 4.2, 4.3, 4.4.1, 4.4.2 and 8.1</a></li>
+Sections 5.2, 8.2.1, 8.2.2, 8.2.3</a></li>
 </ul>
 </div>
 </div>
@@ -2704,22 +2698,21 @@ Sections 4.1, 4.2, 4.3, 4.4.1, 4.4.2 and 8.1</a></li>
 href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
 <p>This week’s slides:</p>
 <ul>
-<li><a href="lectures/L7/week-7.pdf">Lecture 6</a></li>
+<li><a href="lectures/L8/week-8.pdf">Lecture 6</a></li>
 </ul>
 </div>
 <div id="practical-5" class="section level3">
 <h3>Practical</h3>
-<p>This week’s practical is on classification. Code solutions are also
-given to you. Use these answers to help yourself when you’re stuck.</p>
+<p>This week’s practical is on nonlinear regression. Code solutions are
+also given to you. Use these answers to help yourself when you’re
+stuck.</p>
 <ul>
 <li><a
-href="practicals/07_classification_evaluation/07_classification_evaluation.html">Practical
-6: Classification evaluation</a></li>
+href="practicals/08_nonlinear_regression/08_nonlinear_regression.html">Practical
+6: Nonlinear regression</a></li>
 <li><a
-href="practicals/07_classification_evaluation/07_classification_evaluation_answers.html">Practical
-6: Classification evaluation answers</a></li>
-<li><a
-href="practicals/07_classification_evaluation/data.zip">data</a></li>
+href="practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html">Practical
+6: Nonlinear regression answers</a></li>
 </ul>
 <p>Hand in <a
 href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
@@ -2734,7 +2727,7 @@ blackboard</a>.</p>
 <ul>
 <li><a
 href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
-Sections 5.2, 8.2.1, 8.2.2, 8.2.3</a></li>
+Sections ISLR: Chapter 7</a></li>
 </ul>
 </div>
 </div>
@@ -2748,7 +2741,7 @@ Sections 5.2, 8.2.1, 8.2.2, 8.2.3</a></li>
 href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
 <p>This week’s slides:</p>
 <ul>
-<li><a href="lectures/L8/week-8.pdf">Lecture 7</a></li>
+<li><a href="lectures/L8/week-8-new.pdf">Lecture 7</a></li>
 </ul>
 </div>
 <div id="practical-6" class="section level3">
@@ -2757,16 +2750,13 @@ href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
 also given to you. Use these answers to help yourself when you’re
 stuck.</p>
 <ul>
-<li><a
-href="practicals/08_nonlinear_regression/08_nonlinear_regression.html">Practical
-7: Nonlinear regression</a></li>
-<li><a
-href="practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html">Practical
-7: Nonlinear regression answers</a></li>
+<li><a href="practicals/09_ensemble/09_ensemble.html">Practical 7:
+Tree-based methods and SVM</a></li>
+<li><a href="practicals/09_ensemble/09_ensemble_answers.html">Practical
+7: Tree-based methods and SVM answers</a></li>
+<li><a href="practicals/09_ensemble/data.zip">Data</a></li>
 </ul>
-<p>Hand in <a
-href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
-blackboard</a>.</p>
+<p>Hand in <a href="">via blackboard</a>.</p>
 </div>
 </div>
 <div id="column-2-8" class="section level2">
@@ -2777,7 +2767,7 @@ blackboard</a>.</p>
 <ul>
 <li><a
 href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
-Sections ISLR: Chapter 7</a></li>
+Sections ISLR: Chapters 8.1, 8.2 and 9</a></li>
 </ul>
 </div>
 </div>
@@ -2791,24 +2781,15 @@ Sections ISLR: Chapter 7</a></li>
 href="https://www.uu.nl/en/daltonlaan-500">Dalton 500 8.27</a>)</h3>
 <p>This week’s slides:</p>
 <ul>
-<li><a href="lectures/L8/week-8-new.pdf">Lecture 8</a></li>
+<li><a href="">Lecture Slides</a></li>
 </ul>
 </div>
 <div id="practical-7" class="section level3">
 <h3>Practical</h3>
-<p>This week’s practical is on nonlinear regression. Code solutions are
+<p>This week’s practical is on data visualization. Code solutions are
 also given to you. Use these answers to help yourself when you’re
 stuck.</p>
-<ul>
-<li><a href="practicals/09_ensemble/09_ensemble.html">Practical 8:
-Tree-based methods and SVM</a></li>
-<li><a href="practicals/09_ensemble/09_ensemble_answers.html">Practical
-8: Tree-based methods and SVM answers</a></li>
-<li><a href="practicals/09_ensemble/data.zip">Data</a></li>
-</ul>
-<p>Hand in <a
-href="https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&amp;course_id=_146275_1&amp;mode=reset">via
-blackboard</a>.</p>
+<p>Hand in <a href="">via blackboard</a>.</p>
 </div>
 </div>
 <div id="column-2-9" class="section level2">
@@ -2816,11 +2797,10 @@ blackboard</a>.</p>
 <div id="required-reading-7" class="section level3">
 <h3>Required reading</h3>
 <p>Study the following materials</p>
-<ul>
-<li><a
-href="https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf">ISLR V2
-Sections ISLR: Chapters 8.1, 8.2 and 9</a></li>
-</ul>
+</div>
+<div id="useful-links-2" class="section level3">
+<h3>Useful links</h3>
+<p>The following links may be useful</p>
 <!-- # Practice Exam -->
 <!-- ## Column 1 -->
 <!-- ### Practice Exam -->
