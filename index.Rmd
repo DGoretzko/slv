@@ -36,15 +36,15 @@ All practicals and assignments should be hand in [via blackboard](https://uu.bla
 
 | When?  |         | Where?      |
 |--------|---------|-------------|
-| 11-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 18-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 25-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 02-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 09-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 16-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 23-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 30-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
-| 07-Nov | 5 pm | **Exam** |
+| 09-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 16-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 23-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 30-Sep | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 07-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 14-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 21-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 28-Oct | 9 am | [Dalton 500 8.27](https://www.uu.nl/en/daltonlaan-500) |
+| 04-Nov (**Exam**)| 5 pm | [BBG 023](https://www.uu.nl/buys-ballotgebouw) |
 
 ---
 
@@ -76,14 +76,14 @@ In order to pass the course, the final grade must be 5.5 or higher, your contrib
 
 | Week # | Focus | Practical | Materials | Prof |
 |--------|---------------------|--------|-----------|------|
-| 1 | Data wrangling with `R` | `tidyverse: filter(), select(), join(), pivot(), dbplyr`, etc. | [R4DS](https://r4ds.had.co.nz) | DG |
-| 2 | The grammar of graphics | `ggplot()`: `geoms`, `aesthetics`, `scales`, `themes` | [R4DS](https://r4ds.had.co.nz) | DG |
-| 3 | Exploratory data analysis | `Histograms`, `density plots`, `boxplots`, etc. | [R4DS](https://r4ds.had.co.nz) [FIMD Ch1](https://stefvanbuuren.name/fimd/ch-introduction.html) | DG | 
-| 4 | Statistical learning: regression | `lm()`, `glm()`, `knn()` | ISLR | MC |
-| 5 | Statistical learning: classification | `glm()`, trees, `lda()` | ISLR | EJvK |
-| 6 | Classification model evaluation | `prop.table()`, `pROC()`, etc. | ISLR | EJvK |
-|	7 | Nonlinear models | `R` formulas advanced: `I()`, splines, e.g., `bs()` | ISLR | MC |
-| 8 | Bagging, boosting, random forest and support vector machines | `randomforest`, `xgboost` | ISLR | MC |
+| 1 | Data wrangling with `R` and the grammar of graphics | `tidyverse: filter(), select(), join(), pivot(), dbplyr`, `ggplot()`: `geoms`, `aesthetics`, `scales`, `themes` | [R4DS](https://r4ds.had.co.nz) | DG |
+| 2 | Exploratory data analysis | `Histograms`, `density plots`, `boxplots`, etc. | [R4DS](https://r4ds.had.co.nz) [FIMD Ch1](https://stefvanbuuren.name/fimd/ch-introduction.html) | MC | 
+| 3 | Statistical learning: regression | `lm()`, `glm()`, `knn()` | [ISLR](https://www.statlearning.com/) | DG |
+| 4 | Statistical learning: classification | `glm()`, trees, `lda()` | [ISLR](https://www.statlearning.com/) | EJvK |
+| 5 | Classification model evaluation | `prop.table()`, `pROC()`, etc. | [ISLR](https://www.statlearning.com/) | EJvK |
+|	6 | Nonlinear models | `R` formulas advanced: `I()`, splines, e.g., `bs()` | [ISLR](https://www.statlearning.com/) | MC |
+| 7 | Bagging, boosting, random forest and support vector machines | `randomforest`, `xgboost` | [ISLR](https://www.statlearning.com/) | MC |
+| 8 | Benchmarking | `mlr3verse` | [ISLR](https://www.statlearning.com/) [mlr3-book](https://mlr3book.mlr-org.com/) | DG |
 
 <!-- | 5 | Regression model evaluation | model comparison with cross-validation | ISLR |  -->
 
@@ -109,7 +109,7 @@ Students will learn to adapt these techniques in their way of thinking about ana
 
  
 ### Assignments
-Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [course Blackboard page](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Each assignment will be graded. 
+Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [course Blackboard page](). Each assignment will be graded. 
 
 ### Grading
 Students will be evaluated on the following aspects:
@@ -166,7 +166,7 @@ Execute the following lines of code in the console window:
 install.packages(c("ggplot2", "tidyverse", "magrittr", "micemd", "jomo", "pan", 
                  "lme4", "knitr", "rmarkdown", "plotly", "ggplot2", "shiny", 
                  "devtools", "boot", "class", "car", "MASS", "ggplot2movies", 
-                 "ISLR", "DAAG", "mice"), 
+                 "ISLR", "DAAG", "mice", "mlr3verse"), 
                  dependencies = TRUE)
 ```
 
@@ -204,12 +204,12 @@ Naturally, you will need internet access for these services to be accessed.
 
 You can [find this year's assignment 1 here](assignments/assignment_eda.html)
 
-Due date is Oct 3 @ 23.59pm.
+Due date is Oct 1 @ 23.59pm.
 
 ### Assignment 2
 You can [find this year's assignment 2 here](assignments/assignment_prediction.html)
 
-Due date is Nov 13 @ 23.59pm.
+Due date is Nov 11 @ 23.59pm.
 
 ### Rubric for Grading
 
@@ -495,14 +495,14 @@ Study the following materials
 
 - [ISLR V2 Sections ISLR: Chapters 8.1, 8.2 and 9](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
 
-# Practice Exam
+<!-- # Practice Exam -->
 
 
-## Column 1
+<!-- ## Column 1 -->
 
-### Practice Exam
-This exam gives an idea of the type of questions that could have been expected last year. It is by no means meant to be representative in length nor difficulty with respect to the actual exam. The actual exam is usually a bit longer. 
+<!-- ### Practice Exam -->
+<!-- This exam gives an idea of the type of questions that could have been expected last year. It is by no means meant to be representative in length nor difficulty with respect to the actual exam. The actual exam is usually a bit longer.  -->
 
-- [Last year's Practice Exam](practice_exam/SLV_Practice.pdf)
-- [RMD with code answers](practice_exam/SLV_Practice.Rmd)
-- [data.Rdata](practice_exam/data.Rdata)
+<!-- - [Last year's Practice Exam](practice_exam/SLV_Practice.pdf) -->
+<!-- - [RMD with code answers](practice_exam/SLV_Practice.Rmd) -->
+<!-- - [data.Rdata](practice_exam/data.Rdata) -->
