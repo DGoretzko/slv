@@ -1,8 +1,8 @@
 ---
 title: "ML Benchmarks"
 params:
-  #answers: true
-  answers: false
+  answers: true
+  #answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    #pandoc_args: --output=10_benchmark_answers.html
+    pandoc_args: --output=10_benchmark_answers.html
 ---
 
 # Introduction
@@ -25,7 +25,7 @@ In this practical, we will use a data set (`drugs.csv`) containing information o
 The following variables are available in the data set:
 
 - `Age`: Age of participant (standardized)
-- `Gender`: Gender (standardized)
+- `Gender`: Gender (standardized: -0.48246 = male, 0.48246 = female)
 - `Nscore`: Standardized neuroticism score
 - `Escore`: Standardized extraversion score
 - `Oscore`: Standardized openness score
@@ -35,10 +35,13 @@ The following variables are available in the data set:
 - `SS`: Standardized sensation seaking score
 - `User`: Indicator whether participant is a user/non-user
 
-The goal is to predict whether someone is a user of non-user based on all other variables using the `mlr3verse`. 
+The goal is to predict whether someone is a user of non-user based on all other variables using the `mlr3verse`. Further information about the functionalities of `mlr3` can be found at https://mlr3book.mlr-org.com/. 
 
 ```{r packages, warning = FALSE, message = FALSE}
 library(mlr3verse)
+library(tidyverse)
+library(ggplot2)
+library(psych)
 ```
 
 ```{r, make-data, include = F}
@@ -47,311 +50,202 @@ data <- read.csv2("data/drugs.csv")
 
 ---
 
-__1. Get an impression of the data by looking at the structure of the data and creating some descriptive statistics.__
+__1. Get an impression of the data by looking at the structure of the data and creating some descriptive statistics to get an idea of which covariates may be indicative of drug usage.__
 
 ```{r explore-data, include = params$answers}
-head(df)
-tail(df)
+head(data)
+tail(data)
 
-df %>%
-  select(-c(Gender, Disease)) %>%
-  describeBy(df$Disease, fast = TRUE)
-
-# It becomes directly clear that there are substantial differences between
-# the diseased and non-diseased in the data.
+data %>%
+  select(-c(Gender, User)) %>%
+  describeBy(data$User, fast = TRUE)
 ```
 
 ---
 
 __2. To further explore the data we work with, create some interesting data visualizations that show whether there are interesting patterns in the data.__
 
-*Hint:* Think about adding a color aesthetic for the variable `Disease`.
+*Hint:* Think about adding a color aesthetic for the variable `User`.
 
 ```{r exploratory-viz, include = params$answers, cache = TRUE}
-df %>%
+data %>%
   select(-Gender) %>%
   pivot_longer(where(is.numeric)) %>%
-  ggplot(aes(x = value, col = Disease, fill = Disease)) +
+  ggplot(aes(x = value, col = User, fill = User)) +
   geom_boxplot(alpha = 0.8) +
   facet_wrap(~name, scales = "free") +
   scale_color_brewer(palette = "Paired") +
   scale_fill_brewer(palette = "Paired") +
   theme_minimal()
 
-df %>%
-  select(-Gender) %>%
-  pivot_longer(where(is.numeric)) %>%
-  ggplot(aes(x = value, col = Disease, fill = Disease)) +
-  geom_density(alpha = 0.8) +
-  facet_wrap(~name, scales = "free") +
-  scale_color_brewer(palette = "Paired") +
-  scale_fill_brewer(palette = "Paired") +
-  theme_minimal()
-
-
-prop.table(table(df$Gender, df$Disease), margin = 1) %>%
+prop.table(table(data$Gender, data$User), margin = 1) %>%
   as.data.frame %>%
-  select(Gender = Var1, Disease = Var2, `Relative Frequency` = Freq) %>%
-  ggplot(aes(y = `Relative Frequency`, x = Gender, col = Disease, fill = Disease)) +
+  select(Gender = Var1, User = Var2, `Relative Frequency` = Freq) %>%
+  ggplot(aes(y = `Relative Frequency`, x = Gender, col = User, fill = User)) +
   geom_histogram(alpha = 0.8, stat = "identity", position = "dodge") +
   scale_fill_brewer(palette = "Paired") +
   scale_color_brewer(palette = "Paired") +
   theme_minimal()
 
-## There are some differences between distributions for the two
-## Disease categories, but the differences do not seem to be dramatic.
-## Additionally, there are relatively more women with the liver 
-## disease than men.
+## info: -0.48246 = male, 0.48246 = female
+## Percentage of males using/ having used drugs appears to be much higher than for females
 ```
 
 ---
 
-__3. Shortly reflect on the difference between bagging, random forests, and boosting.__
+__4. Create a classification task in mlr3 defining the objective for the ML benchmark.__
 
-```{r ensemble-methods, include = params$answers}
-## Bagging:       fit a regression tree to N bootstrap samples of the training data
-##                take the average of all classification trees to base predictions on
-##                Note: out-of-bag data can serve as internal validation set.
+```{r task, include = params$answers}
+# transform criterion to factor variable (mlr3 expects a factor variable when a classification task is created ):
 
-## Random forest: Similarly to bagging, classification trees are trained on 
-##                a bootstrap sample of the data. However, the decision trees
-##                are trained using less than all features in the data. 
+data$User <- as.factor(data$User)
 
-## Boosting:      We build a decision tree sequentially. Given the current
-##                we fit a (small) tree on the residuals of the current model, 
-##                rather than on the outcome Y
+task <- TaskClassif$new(id = "drugs-data", # arbitrary name (important if benchmark uses multiple data sets)
+                        backend = data, # data set
+                        target = "User", # target variable
+                        positive = "User") # label considered "positive" class
 ```
 
 ---
 
-We are going to apply different machine learning models using the `caret` package. 
+__5. Set up a complex nested resampling strategy by defining an inner and an outer resampling. The inner resampling should be a simple train-test split (70-30). Choose a four-fold CV for the outer resampling__
 
-__4. Apply bagging to the training data, to predict the outcome `Disease`, using the `caret` library.__
-
-*Note.* We first specify the internal validation settings, like so:
-
-```{r cross-validation-settings}
-cvcontrol <- trainControl(method = "repeatedcv", 
-                          number = 10,
-                          allowParallel = TRUE)
-```
-
-These settings can be inserted within the `train` function from the `caret` package. Make sure to use the `treebag` method, to specify `cvcontrol` as the `trControl` argument and to set `importance = TRUE`.
-
-```{r train-bag, include = params$answers}
-bag_train <- train(Disease ~ .,
-                   data = df, 
-                   method = 'treebag',
-                   trControl = cvcontrol,
-                   importance = TRUE)
-```
-
-
----
-
-__5. Interpret the variable importance measure using the `varImp` function on the trained model object.__
-
-```{r bag-importance, include = params$answers}
-bag_train %>%
-  varImp %>%
-  plot
+```{r resampling, include = params$answers}
+# we use a relatively simple resampling strategy to save computation time
+# in a real benchmark, you may want to use more folds and/or repeated CV for the outer resampling and CV for the inner resampling
+res_outer <- rsmp("cv", folds = 4)
+res_inner <- rsmp("holdout", ratio = 0.7)
 ```
 
 ---
 
-__6. Create training set predictions based on the bagged model, and use the `confusionMatrix()` function from the `caret` package to assess it's performance.`__
+__6. We want to tune some hyperparameters of two ML algorithms. Define a tuning scheme (i.e., a tuner and a terminator). For simplicity (and to save computation time), use random search with 200 iterations. Define a performance measure that should be optimized during hyperparamter tuning. Using the accuracy as a performance measure makes sense as most algorithms are trained to optimize the accuracy/MMCE (you can choose a different measure though, for example, if you want to focus more on one of the possible classification errors).`__
 
-*Hint: You will have to create predictions based on the trained model for the training data, and evaluate these against the observed values of the training data.*
+```{r tuner, include = params$answers}
+# do not use too many iterations (n_evals) here to keep the runtime low
+terminator <- trm("evals", n_evals = 200)
+tuner <- tnr("random_search")
 
-```{r bag-training-predictions, include = params$answers}
-confusionMatrix(predict(bag_train, type = "raw"),
-                df$Disease)
-
-## We have achieved a perfect training set performance. However, this shows
-## nothing more than that we have been able to train the model. We need to
-## evaluate our 
-```
-
-__7. Now ask for the output of the bagged model. Explain why the under both approaches differ.__
-
-```{r show-bag, include = params$answers}
-bag_train
-```
-
-
----
-
-We will now follow the same approach, but rather than bagging, we will train a random forest on the training data. 
-
----
-
-__8. Fit a random forest to the training data to predict the outcome `Disease`, using the `caret` library.__
-
-*Note.* Use the same `cvcontrol` settings as in the previous model.
-
-```{r train-rf, include = params$answers}
-rf_train <- train(Disease ~ .,
-                  data = df, 
-                  method = 'rf',
-                  trControl = cvcontrol,
-                  importance = TRUE)
+# performance measure that is later used for tuning
+mes_acc <- msr("classif.acc")
 ```
 
 ---
 
-__9. Again, interpret the variable importance measure using the `varImp` function on the trained model object. Do you draw the same conclusions as under the bagged model?__
+__7. Set up a list of learners that should be compared in this benchmark. Use a baseline ("featureless") learner, a logistic regression model, a random forest (use the ranger implementation as it is the fastest), an SVM, and an XGBoost (gradient boosting algorithm).__
 
-```{r rf-importance, include = params$answers}
-rf_train %>%
-  varImp %>%
-  plot
+*Note.* Set `predict_type = "prob"` for each algorithm to obtain predicted probabilities which allows us to calculate a broader range of evaluation metrics.
 
-## The random forest model indicates that other variables are more important,
-## as compared to the bagged model.
-```
----
-
-__10. Output the model output from the random forest. Are we doing better than with the bagged model?__
-
-```{r show-rf, include = params$answers}
-rf_train
-
-## Yes, the most accurate model indicates that we do just slightly better than
-## with the bagged model. However, this might well be due to chance.
+```{r learners, include = params$answers}
+baseline <- lrn("classif.featureless",  predict_type = "prob")
+logreg <- lrn("classif.log_reg", predict_type = "prob")
+ranger <- lrn("classif.ranger", predict_type = "prob")
+svm <- lrn("classif.svm", predict_type ="prob", type = "C-classification")
+xgboost <- lrn("classif.xgboost", predict_type = "prob")
 ```
 
 ---
 
-__11. Now, fit a boosting model using the `caret` library to predict disease status.`__
+__8. We now want to tune hyperparameters of the XGBoost and the SVM. Define the parameter set that should be tuned and set up the respective modeling pipeline using the AutoTuner function. For the XGBoost, we want to tune the number of trees (nrounds) between 1 and 500, the learning rate (eta) between 0.001 and 0.2, and the maximum tree depth between 1 and 10. For the SVM, we want to tune the kernel function (i.e., choose between radial and linear) and the cost parameter between 0 and 50.__
 
-*Hint:* Use gradient boosting (the `gbm` method in `caret`).
+```{r autotune, include = params$answers}
+# this is just an example using three of the most important hyperparameters of the xgboost algorithm, this is probably not sufficient to reach the best performance possible
+param_set_xgb <- ps(
+  nrounds = p_int(lower = 1, upper = 500),
+  eta = p_dbl(lower = 0.001, upper = 0.2),
+  max_depth = p_int(lower = 1, upper = 10)
+)
 
-```{r fit-gbm, include = params$answers, message = FALSE}
-gbm_train <- train(Disease ~ .,
-                   data = df,
-                   method = "gbm",
-                   verbose = F,
-                   trControl = cvcontrol)
+# Sometimes you have to load the mlr3tuning package separately (if you receive an error message stating that R cannot find an object called 'AutoTuner')
+# library(mlr3tuning)
+
+xgb_tuned <- AutoTuner$new(
+  learner = xgboost, # basic xgboost learner (see above)
+  resampling = res_inner, # inner resampling to evaluate different param sets (defined above)
+  measure = mes_acc, # performance measure to select parameters (see above)
+  search_space = param_set_xgb, # parameter range that is tested
+  terminator = terminator, # termination criterion
+  tuner = tuner) # tuning scheme (here: random search)
+
+## SVM (this also only an example; to optimize the performance in a real application a more extensive tuning might be necessary)
+
+param_set_svm <- ps(
+  cost = p_dbl(lower = 0, upper = 50),
+  kernel = p_fct(c("radial", "linear"))
+)
+
+svm_tuned <- AutoTuner$new(
+  learner = svm, # basic svm learner (see above)
+  resampling = res_inner, # inner resampling to evaluate different param sets (defined above)
+  measure = mes_acc, # performance measure to select parameters (see above)
+  search_space = param_set_svm, # parameter range that is tested
+  terminator = terminator, # termination criterion
+  tuner = tuner) # tuning scheme (here: random search)
 ```
 
 ---
 
-__12. Again, interpret the variable importance measure. You will have to call for `summary()` on the model object you just created. Compare the output to the previously obtained variable importance measures.__
+__9. To exemplify how to integrate a complex modeling pipeline in a benchmark, we want test how a logistic regression model with variable selection performs in comparison to the logistic regression model that uses the full feature set. Therefore, create a filter that selects the two most relevant features based on the training data and create a so-called graph learner to include the complete modeling pipeline in the resampling procedure.__
 
-```{r gbm_importance, include = params$answers}
-summary(gbm_train)
+*Note*: Use the F-statistic of an ANOVA to select the features that are most strongly related to the outcome. You can simply create a filter with the `flt()`-function (https://mlr3filters.mlr-org.com/reference/mlr_filters.html).
+
+```{r select, include = params$answers}
+filter = flt("anova")
+filter = po("filter", filter = filter)
+filter$param_set$values$filter.nfeat = 2
+logreg_varselect = GraphLearner$new(filter %>>% logreg)
+```
+---
+
+__10. Set up and run the benchmark experiment. Make sure to parallelize the execution to save computation time.__
+
+*Note*: Set a seed to make the results reproducible!
+
+```{r benchmark, include = params$answers}
+# Parallelize the execution using the future package
+# adjust the number of workers depending on your machine
+future::plan("multisession", workers = 6)
+
+set.seed(40123142)
+
+
+grid <- benchmark_grid(tasks = list(task),
+                       # include all learners (baseline, logreg, logreg with var selection, tuned xgboost, and tuned svm):
+                       learners = list(baseline, logreg, logreg_varselect, ranger, xgb_tuned, svm_tuned),
+                       resamplings = list(res_outer)
+)
+
+results <- benchmark(grid, store_models = FALSE) # store_models = FALSE to save memory
+
+future::plan("sequential")
 ```
 
 ---
 
-__13. Output the model output from our gradient boosting procedure. Are we doing better than with the bagged and random forest model?__
+__11. Now aggregate the results using different performance metrics - accuracy, sensitivity, specificty and auc. Also make sure to calculate not only the mean over the four folds but also the standard deviation to get an idea of how stable the performance estimates are.__
 
-```{r show-gbm, include = params$answers}
-gbm_train
+```{r eval, include = params$answers}
+mes_list <- list(
+  msr("classif.sensitivity"),
+  msr("classif.sensitivity", id = "classif.sensitivity.sd", aggregator = sd),
+  msr("classif.specificity"),
+  msr("classif.specificity", id = "classif.specificity.sd", aggregator = sd),
+  msr("classif.acc"),
+  msr("classif.acc", id = "classif.acc.sd", aggregator = sd),
+  msr("classif.auc"),
+  msr("classif.auc", id = "classif.auc.sd", aggregator = sd)
+)
 
-# Yes, our best model is doing slightly better then the previous two models.
-# However, this might still be random variation.
+results$aggregate(mes_list)
 ```
 
 ---
 
-For now, we will continue with extreme gradient boosting, although we will use a difference procedure.
+__12. Use the autoplot function from the `mlr3viz` package to create a boxplot to visualize the accuracy of each learner in the benchmark experiment.__
 
-
-We will use `xgboost` to train a binary classification model, and create some visualizations to obtain additional insight in our model. We will create the visualizations using `SHAP` (**SH**apley **A**dditive ex**P**lanations) values, which are a measure of importance of the variables in the model. In fact, `SHAP` values indicate the influence of each input variable on the predicted probability for each person. Essentially, these give an indication of the difference between the predicted probability with and without that variable, for each person's score.
-
----
-
-__14. Download the file `shap.R` from [this](https://github.com/pablo14/shap-values) Github repository.__
-
-*Note.* There are multiple ways to this, of which the simplest is to run the following code. 
-
-```{r download-shap-functions, message = FALSE}
-library(devtools)
-source_url("https://github.com/pablo14/shap-values/blob/master/shap.R?raw=TRUE")
-```
-
-
-Additionally, you could simply go to the file `shap.R` and copy-and-paste the code into the current repository. However, you could also fork and clone the repository, to make adjustments to the functions that are already created.
-
----
-
-
-__15. Specify your model as follows, and use it to create predictions on the training data.__
-
-```{r xgboost, results = FALSE, message = FALSE}
-train_x <- model.matrix(Disease ~ ., df)[,-1]
-train_y <- as.numeric(df$Disease) - 1
-xgboost_train <- xgboost(data = train_x,
-                         label = train_y, 
-                         max.depth = 10,
-                         eta = 1,
-                         nthread = 4,
-                         nrounds = 4,
-                         objective = "binary:logistic",
-                         verbose = 2)
-
-
-
-pred <- tibble(Disease = predict(xgboost_train, newdata = train_x)) %>%
-  mutate(Disease = factor(ifelse(Disease < 0.5, 1, 2),
-                          labels = c("Healthy", "Disease")))
-
-table(pred$Disease, df$Disease)
-```
-
----
-
-__16. First, calculate the `SHAP` rank scores for all variables in the data, and create a variable importance plot using these values. Interpret the plot.__
-
-```{r make-shap, results = params$answers, fig.show='hide'}
-shap_results <- shap.score.rank(xgboost_train,
-                                X_train = train_x,
-                                shap_approx = F)
-
-var_importance(shap_results)
-```
-
----
-
-__17. Plot the `SHAP` values for every individual for every feature and interpret them.__
-
-```{r shap-plots, results = params$answers}
-shap_long <- shap.prep(shap = shap_results,
-                       X_train = train_x)
-
-plot.shap.summary(shap_long)
-
-xgb.plot.shap(train_x, features = colnames(train_x), model = xgboost_train, n_col = 3)
-```
-
-```{r plot-interpretation, include = params$answers}
-## The first plot shows, for example, that those with a high value for 
-## Direct_Bilirubin have a lower probability of being diseased. Also,
-## Those with a higher age have a lower probability of being diseased,
-## while those with a higher Albumin have a higher probability of being diseased.
-
-## The second set of plots displays the marginal relationships of the SHAP values with the predictors. This conveys the same information, but in greater detail. The interpretability may be a bit tricky for the inexperienced data analyst. 
-```
-
----
-
-__18. Verify which of the models you created in this practical performs best on the test data.__
-
-```{r test-models, include = params$answers}
-test <- readRDS("data/test_disease.RDS")
-
-bag_test <- predict(bag_train, newdata = test)
-rf_test  <- predict(rf_train, newdata = test)
-gbm_test <- predict(gbm_train, newdata = test)
-xgb_test <- predict(xgboost_train, newdata = model.matrix(Disease ~ ., test)[,-1]) %>%
-  factor(x = ifelse(. < 0.5, 1, 2), levels = c(1,2), labels = c("Healthy", "Disease"))
-
-list(bag_test, 
-     rf_test, 
-     gbm_test, 
-     xgb_test) %>%
-  map(~ confusionMatrix(.x, test$Disease))
+```{r viz, include = params$answers}
+# autoplot can be used to create a nice plot that summarizes the benchmark results (e.g., a boxplot)
+mlr3viz::autoplot(results, measure = msr("classif.acc"), type = "boxplot")
 ```
 
 ---
@@ -360,8 +254,8 @@ list(bag_test,
 
 When you have finished the practical, 
 
-- enclose all files of the project `09_ensemble.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project `10_benchmark.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Try do so as soon as possible. 
+- hand in the zip [here](). 
 
 ---
