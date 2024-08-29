@@ -1,8 +1,8 @@
 ---
 title: "Supervised learning: Nonlinear Regression"
 params:
-  #answers: true
-  answers: false
+  answers: true
+  #answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    #pandoc_args: --output=08_nonlinear_regression_answers.html
+    pandoc_args: --output=08_nonlinear_regression_answers.html
   pdf_document:
     toc: true
     toc_depth: 1
@@ -459,8 +459,8 @@ tibble(names = as_factor(colnames(output_matrix)),
 
 When you have finished the practical, 
 
-- enclose all files of the project `08_nonlinear_regression.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Try do so as soon as possible. That way we can iron out issues during the next Q&A in Week 8.
+- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4935396_1&course_id=_152615_1&mode=reset). Do so before next week's lecture. 
 
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Supervised learning: Classification 1"
 params:
-  #answers: true
-   answers: false
+   answers: true
+   #answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    #pandoc_args: --output=06_classification_answers.html
+    pandoc_args: --output=06_classification_answers.html
 ---
 
 # Introduction
@@ -436,8 +436,8 @@ predict(lr_mod_titanic,
 When you have finished the practical, 
 
 
-- enclose all files of the project `06_classification.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Do so before Lecture 7.
+- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4935396_1&course_id=_152615_1&mode=reset). Do so before next week's lecture. .
 
 ---

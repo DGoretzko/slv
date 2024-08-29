@@ -1,8 +1,8 @@
 ---
 title: "Ensemble methods"
 params:
-  #answers: true
-  answers: false
+  answers: true
+  #answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    #pandoc_args: --output=09_ensemble_answers.html
+    pandoc_args: --output=09_ensemble_answers.html
 ---
 
 # Introduction
@@ -323,7 +323,7 @@ table(pred$Disease, df$Disease)
 
 __16. First, calculate the `SHAP` rank scores for all variables in the data, and create a variable importance plot using these values. Interpret the plot.__
 
-```{r make-shap, results = params$answers, fig.show='hide'}
+```{r make-shap, include = params$answers, fig.show='hide'}
 shap_results <- shap.score.rank(xgboost_train,
                                 X_train = train_x,
                                 shap_approx = F)
@@ -335,7 +335,7 @@ var_importance(shap_results)
 
 __17. Plot the `SHAP` values for every individual for every feature and interpret them.__
 
-```{r shap-plots, results = params$answers}
+```{r shap-plots, include = params$answers}
 shap_long <- shap.prep(shap = shap_results,
                        X_train = train_x)
 
@@ -379,8 +379,8 @@ list(bag_test,
 
 When you have finished the practical, 
 
-- enclose all files of the project `09_ensemble.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Try do so as soon as possible. 
+- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4935396_1&course_id=_152615_1&mode=reset). Do so before next week's lecture. 
 
 ---

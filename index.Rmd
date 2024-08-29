@@ -28,7 +28,7 @@ Assessment: Assignments and Exam  <br>
 
 ---
 
-All practicals and assignments should be hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset)
+All practicals and assignments should be hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview)
 
 ---
 
@@ -78,11 +78,11 @@ In order to pass the course, the final grade must be 5.5 or higher, your contrib
 |--------|---------------------|--------|-----------|------|
 | 1 | Data wrangling with `R` and the grammar of graphics | `tidyverse: filter(), select(), join(), pivot(), dbplyr`, `ggplot()`: `geoms`, `aesthetics`, `scales`, `themes` | [R4DS](https://r4ds.had.co.nz) | DG |
 | 2 | Exploratory data analysis | `Histograms`, `density plots`, `boxplots`, etc. | [R4DS](https://r4ds.had.co.nz) [FIMD Ch1](https://stefvanbuuren.name/fimd/ch-introduction.html) | MC | 
-| 3 | Statistical learning: regression | `lm()`, `glm()`, `knn()` | [ISLR](https://www.statlearning.com/) | DG |
+| 3 | Statistical learning: regression | `lm()`, `glm()`, `knn()` | [ISLR](https://www.statlearning.com/) | MC |
 | 4 | Statistical learning: classification | `glm()`, trees, `lda()` | [ISLR](https://www.statlearning.com/) | EJvK |
 | 5 | Classification model evaluation | `prop.table()`, `pROC()`, etc. | [ISLR](https://www.statlearning.com/) | EJvK |
 |	6 | Nonlinear models | `R` formulas advanced: `I()`, splines, e.g., `bs()` | [ISLR](https://www.statlearning.com/) | MC |
-| 7 | Bagging, boosting, random forest and support vector machines | `randomforest`, `xgboost` | [ISLR](https://www.statlearning.com/) | MC |
+| 7 | Bagging, boosting, random forest and support vector machines | `randomforest`, `xgboost` | [ISLR](https://www.statlearning.com/) | DG |
 | 8 | Benchmarking | `mlr3verse` | [ISLR](https://www.statlearning.com/) [mlr3-book](https://mlr3book.mlr-org.com/) | DG |
 
 <!-- | 5 | Regression model evaluation | model comparison with cross-validation | ISLR |  -->
@@ -109,7 +109,7 @@ Students will learn to adapt these techniques in their way of thinking about ana
 
  
 ### Assignments
-Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [course Blackboard page](). Each assignment will be graded. 
+Students will form groups to choose work on two assignments. Students will need to perform calculations and program code for these assignments. All work needs to be combined in an easy understandable, self-contained and insightful `RStudio` project and must be submitted to the [course Blackboard page](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview). Each assignment will be graded. 
 
 ### Grading
 Students will be evaluated on the following aspects:
@@ -240,7 +240,7 @@ This week's practical is split into two parts - *practical 1* on data wrangling 
 - [Practical 1b: Data visualization with code solutions](practicals/02_Data_Visualization/02_Data_Visualisation_answers.html)
 
 
-Hand in your answers to both practicals separately [via blackboard]().
+Hand in your answers to both practicals separately [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 ### A must watch
 The below 4-part series by Garrett Grolemund on `dplyr` and the `tidyverse` is very informative:
@@ -295,7 +295,7 @@ This week's practical is on exploratory data analysis. Code solutions are also g
 - [Practical 2: EDA](practicals/03_Exploratory/03_Exploratory.html)
 - [Practical 2: EDA with code solutions](practicals/03_Exploratory/03_Exploratory_Answers.html)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 ## Column 2
 
@@ -337,7 +337,7 @@ This week's practical is on regression. Code solutions are also given to you. Us
 - [Practical 3: Regression](practicals/04_Regression/04_Regression.html)
 - [Practical 3: Regression with code solutions](practicals/04_Regression/04_Regression_answers.html)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 ## Column 2
 
@@ -365,7 +365,7 @@ This week's practical is on classification. Code solutions are also given to you
 - [Practical 4: Classification answers](practicals/06_classification/06_classification_answers.html)
 - [data](practicals/06_classification/data.zip)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 **NOT HAND IN, BUT STILL USEFUL**: I also give you the following practical from last year. Please view and study the practical up to and including Exercise 10. No need to hand anything in. All the regularization (`glmnet`) exercises 11-19 are not specifically covered in this course, but you may of course use the methods in your Assignment 2 if you wish. Let us know if you have any questions. 
 
@@ -398,7 +398,7 @@ This week's practical is on classification. Code solutions are also given to you
 - [Practical 5: Classification evaluation answers](practicals/07_classification_evaluation/07_classification_evaluation_answers.html)
 - [data](practicals/07_classification_evaluation/data.zip)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 ## Column 2
 
@@ -424,7 +424,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 - [Practical 6: Nonlinear regression](practicals/08_nonlinear_regression/08_nonlinear_regression.html)
 - [Practical 6: Nonlinear regression answers](practicals/08_nonlinear_regression/08_nonlinear_regression_answers.html)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 ## Column 2
 
@@ -451,7 +451,7 @@ This week's practical is on nonlinear regression. Code solutions are also given 
 - [Practical 7: Tree-based methods and SVM answers](practicals/09_ensemble/09_ensemble_answers.html)
 - [Data](practicals/09_ensemble/data.zip)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 ## Column 2
 
@@ -477,7 +477,7 @@ This week's practical is about conducting ML benchmarks with `mlr3`. Code soluti
 - [Practical 8: ML Benchmark answers](practicals/10-benchmark/10_benchmark_answers.html)
 - [Data](practicals/10-benchmark/data.zip)
 
-Hand in [via blackboard]().
+Hand in [via blackboard](https://uu.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_152615_1&handle=cp_announcements&mode=cpview).
 
 
 

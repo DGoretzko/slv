@@ -1,12 +1,4 @@
-base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 MASS
-splines
 ISLR
 tidyverse
 ggplot2
@@ -18,3 +10,4 @@ dplyr
 stringr
 forcats
 cowplot
+lubridate

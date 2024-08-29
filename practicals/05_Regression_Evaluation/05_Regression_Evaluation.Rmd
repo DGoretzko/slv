@@ -1,7 +1,7 @@
 ---
 title: "Supervised learning: Regression 2"
 params:
-  answers: true
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     df_print: paged
     theme: paper
     highlight: pygments
-    pandoc_args: --output=05_Regression_Evaluation_answers.html
+    #pandoc_args: --output=05_Regression_Evaluation_answers.html
 ---
 
 # Introduction
@@ -469,8 +469,8 @@ tibble(Method = as_factor(c("lm", "subset", "lasso", "cv_las")), MSE = mses) %>%
 When you have finished the practical, 
 
 
-- enclose all files of the project `05_Regression_Evaluation.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4472168_1&course_id=_146275_1&mode=reset). Do so before Lecture 7.
+- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4935396_1&course_id=_152615_1&mode=reset). Do so before next week's lecture. 
 
 ---

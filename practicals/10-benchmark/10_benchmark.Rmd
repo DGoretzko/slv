@@ -1,8 +1,8 @@
 ---
 title: "ML Benchmarks"
 params:
-  answers: true
-  #answers: false
+  #answers: true
+  answers: false
 mainfont: Arial
 fontsize: 12pt
 urlcolor: blue
@@ -13,7 +13,7 @@ output:
     toc_float: true
     df_print: paged
     theme: paper
-    pandoc_args: --output=10_benchmark_answers.html
+    #pandoc_args: --output=10_benchmark_answers.html
 ---
 
 # Introduction
@@ -222,7 +222,7 @@ future::plan("sequential")
 
 ---
 
-__11. Now aggregate the results using different performance metrics - accuracy, sensitivity, specificty and auc. Also make sure to calculate not only the mean over the four folds but also the standard deviation to get an idea of how stable the performance estimates are.__
+__11. Now aggregate the results using different performance metrics - accuracy, sensitivity, specificty and AUC. Also make sure to calculate not only the mean over the four folds but also the standard deviation to get an idea of how stable the performance estimates are.__
 
 ```{r eval, include = params$answers}
 mes_list <- list(
@@ -254,8 +254,8 @@ mlr3viz::autoplot(results, measure = msr("classif.acc"), type = "boxplot")
 
 When you have finished the practical, 
 
-- enclose all files of the project `10_benchmark.Rproj` (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
+- enclose all files of the project (i.e. all `.R` and/or `.Rmd` files including the one with your answers, and the `.Rproj` file) in a zip file, and 
 
-- hand in the zip [here](). 
+- hand in the zip [here](https://uu.blackboard.com/webapps/blackboard/content/listContentEditable.jsp?content_id=_4935396_1&course_id=_152615_1&mode=reset). Do so before next week's lecture. 
 
 ---

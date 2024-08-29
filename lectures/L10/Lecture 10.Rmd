@@ -449,3 +449,5 @@ mlr3viz::autoplot(results, measure = msr("classif.acc"), type = "boxplot")
     - most comprehensive ecosystem in R that is constantly updated
 
 - More detailed descriptions and tutorials to deal with more advanced problems can be found under https://mlr3.mlr-org.com/ 
+
+- Other popular frameworks include `tidymodels` (https://www.tidymodels.org/), `caret` (https://topepo.github.io/caret/), or `h2o` (https://cran.r-project.org/web/packages/h2o/index.html)
