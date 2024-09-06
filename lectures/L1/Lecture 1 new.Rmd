@@ -611,30 +611,6 @@ In this course we emphasize on **drawing insights that help us understand the da
 
 # Some examples
 
-## Spaceshuttle Challenger
-<div style="float: left; width: 40%;">
-![](img/chal.jpg){width=100%}
-</div>
-<div style="float: right; width: 50%;">
-```{r failure, echo = FALSE, message=FALSE, warning=FALSE, fig.height = 3.5, fig.width=4}
-library(tidyverse)
-library(ggplot2)
-library(alr4)
-
-Challeng %>% 
-  filter(fail > 0) %>% 
-  ggplot(aes(temp, fail)) +
-  geom_jitter(height = .1, width = .01) + 
-  geom_smooth(method = "lm", se = FALSE) +
-  ylim(0, 5) + xlim(35, 85) + 
-  ylab("Number of distressed O−rings at each launch") +
-  xlab("Temperature in degrees Fahrenheit") + 
-  theme_classic()
-```
-</div>
-<div style="clear: both;"></div>
-36 years ago, on 28 January 1986, 73 seconds into its flight and at an altitude of 9 miles, the space shuttle Challenger experienced an enormous fireball caused by one of its two booster rockets and broke up. The crew compartment continued its trajectory, reaching an altitude of 12 miles, before falling into the Atlantic. All seven crew members, consisting of five astronauts and two payload specialists, were killed.
-
 ## How wages differ
 <center>
 ![](img/ISLR.png){width=60%}
@@ -712,58 +688,33 @@ where $P$ is the percentage of ILI physician visit and $Q$ is the ILI-related qu
 
 <!-- **Can we think of an example of a case where the model did not do well?** -->
 
-## Nothing happened, so we ignored it
-<div style="float: left; width: 50%;">
-```{r darkdata, echo = FALSE, message=FALSE, warning=FALSE, fig.width = 4}
-Challeng %>% 
-  ggplot(aes(temp, fail)) +
-  geom_point() + 
-  geom_smooth(method = "lm", se = FALSE) +
-  ylim(0, 5) + xlim(35, 85) + 
-  ylab("Number of distressed O−rings at each launch") +
-  xlab("Temperature in degrees Fahrenheit") + 
-  theme_classic()
+<!-- # From data collection to output -->
 
-```
-</div>
-<div style="float: right; width: 50%;">
-In the decision process that led to the unfortunate launch of spaceshuttle challenger, some dark data existed.
+<!-- ## Why analysis and visualization? -->
 
-***Dark data*** is information that is not available. 
+<!-- - When high risk decisions are at hand, it paramount to analyze the correct data.  -->
 
-Such unavailable information can mislead people. The notion that we could potentially be misled is important, because we then need to accept that our outcome analysis or decision process might be faulty. 
-<br><br>
+<!-- - When thinking about important topics, such as whether to stay in school, it helps to know that more highly educated people tend to earn more, but also that there is no difference for top earners. -->
 
-**If you do not have all information, there is always a possibility that you arrive at an invalid conclusion or a wrong decision.**
-</div>
+<!-- - Before John Snow, people thought “miasma” (some form of bad air) caused cholera and they fought it by airing out the house. It was not clear whether this helped or not, but people thought it must because “miasma” theory said so -->
 
-# From data collection to output
+<!-- - Election polls vary randomly from day to day. Before aggregating services like `Peilingwijzer`, newspapers would make huge news items based on noise from opinion polls. -->
 
-## Why analysis and visualization?
+<!-- - If we know flu is coming two weeks earlier than usual, that’s just enough time to buy shots for very weak people (but be aware: **Changing data conditions**). -->
 
-- When high risk decisions are at hand, it paramount to analyze the correct data. 
+<!-- - If we know how ecosystems are affected by temperature change, we know how our forests will change in the coming 50-100 years due to climate change. -->
 
-- When thinking about important topics, such as whether to stay in school, it helps to know that more highly educated people tend to earn more, but also that there is no difference for top earners.
+<!-- ## There is a need -->
 
-- Before John Snow, people thought “miasma” (some form of bad air) caused cholera and they fought it by airing out the house. It was not clear whether this helped or not, but people thought it must because “miasma” theory said so
+<!-- The examples have in common that data analysis and the accompanying visualizations have yielded insights and solved problems that could not be solved without them. -->
 
-- Election polls vary randomly from day to day. Before aggregating services like `Peilingwijzer`, newspapers would make huge news items based on noise from opinion polls.
+<!-- -  On some level, humans do nothing but analyze data; -->
+<!-- -  They may not do it consistently, understandibly, transparently, or correctly, -->
+<!-- however; -->
+<!-- -  DAV help us process more data, and can keep us honest; -->
+<!-- -  DAV can also exacerbate our biases when we are not careful. -->
 
-- If we know flu is coming two weeks earlier than usual, that’s just enough time to buy shots for very weak people (but be aware: **Changing data conditions**).
-
-- If we know how ecosystems are affected by temperature change, we know how our forests will change in the coming 50-100 years due to climate change.
-
-## There is a need
-
-The examples have in common that data analysis and the accompanying visualizations have yielded insights and solved problems that could not be solved without them.
-
--  On some level, humans do nothing but analyze data;
--  They may not do it consistently, understandibly, transparently, or correctly,
-however;
--  DAV help us process more data, and can keep us honest;
--  DAV can also exacerbate our biases when we are not careful.
-
-## Thought
+## Measle Vaccines
 <center>
 ![](img/measlescompress.gif){width=60%}
 </center>
@@ -794,6 +745,12 @@ Data wrangling is the process of transforming and mapping data from one "raw" da
 [Source: Trifacta](https://www.trifacta.com/data-wrangling/)
 
 # Data Manipulation
+
+## R 
+
+- In this course we use R for data analysis and data visualization
+
+- For those of you who are not familiar with it, we have a very brief intro to R [on the website of our colleague Gerko](https://www.gerkovink.com/prepR/)!
 
 ## We use the following packages
 ```{r warning=FALSE, message=FALSE}
